@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+data/source.zip
+.coverage
+*.log
+.env
+.env.*
+!.env.example
+node_modules/
+dist/

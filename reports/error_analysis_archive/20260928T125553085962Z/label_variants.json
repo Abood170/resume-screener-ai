@@ -1,0 +1,102 @@
+{
+  "ACCOUNTANT": [
+    "accountant",
+    "accountants",
+    "accounting"
+  ],
+  "ADVOCATE": [
+    "advocate",
+    "advocates",
+    "advocacy"
+  ],
+  "AGRICULTURE": [
+    "agriculture",
+    "agricultural"
+  ],
+  "APPAREL": [
+    "apparel"
+  ],
+  "ARTS": [
+    "arts",
+    "artist",
+    "artists",
+    "art"
+  ],
+  "AUTOMOBILE": [
+    "automobile",
+    "automobiles",
+    "automotive"
+  ],
+  "AVIATION": [
+    "aviation"
+  ],
+  "BANKING": [
+    "banking",
+    "banker",
+    "bankers"
+  ],
+  "BPO": [
+    "bpo",
+    "business process outsourcing"
+  ],
+  "BUSINESS-DEVELOPMENT": [
+    "business development"
+  ],
+  "CHEF": [
+    "chef",
+    "chefs"
+  ],
+  "CONSTRUCTION": [
+    "construction"
+  ],
+  "CONSULTANT": [
+    "consultant",
+    "consultants",
+    "consulting",
+    "consultancy"
+  ],
+  "DESIGNER": [
+    "designer",
+    "designers",
+    "design"
+  ],
+  "DIGITAL-MEDIA": [
+    "digital media"
+  ],
+  "ENGINEERING": [
+    "engineering",
+    "engineer",
+    "engineers"
+  ],
+  "FINANCE": [
+    "finance",
+    "financial"
+  ],
+  "FITNESS": [
+    "fitness"
+  ],
+  "HEALTHCARE": [
+    "healthcare",
+    "health care"
+  ],
+  "HR": [
+    "hr",
+    "human resources",
+    "human resource"
+  ],
+  "INFORMATION-TECHNOLOGY": [
+    "information technology"
+  ],
+  "PUBLIC-RELATIONS": [
+    "public relations"
+  ],
+  "SALES": [
+    "sales",
+    "salesperson"
+  ],
+  "TEACHER": [
+    "teacher",
+    "teachers",
+    "teaching"
+  ]
+}

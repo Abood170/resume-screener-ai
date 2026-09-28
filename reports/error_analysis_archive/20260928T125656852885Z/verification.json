@@ -1,0 +1,16 @@
+{
+  "backend": {
+    "tests": 63,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 63
+  },
+  "frontend": {
+    "tests": 26,
+    "passed": 26,
+    "failures": 0,
+    "skipped": 0,
+    "runner_success": true
+  }
+}

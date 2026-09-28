@@ -1,0 +1,108 @@
+{
+  "clear_accounting_demo": {
+    "status_code": 200,
+    "response": {
+      "predicted_category": "ACCOUNTANT",
+      "confidence": 0.725,
+      "calibrated_predicted_category": "ACCOUNTANT",
+      "calibrated_confidence": 0.8085367244885062,
+      "calibrated_top_predictions": [
+        {
+          "category": "ACCOUNTANT",
+          "probability": 0.8085367244885062
+        },
+        {
+          "category": "FINANCE",
+          "probability": 0.10153132222782696
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.008440936986360139
+        }
+      ],
+      "is_uncertain": false,
+      "uncertainty_reason": null,
+      "top_predictions": [
+        {
+          "category": "ACCOUNTANT",
+          "probability": 0.725
+        },
+        {
+          "category": "FINANCE",
+          "probability": 0.18
+        },
+        {
+          "category": "BANKING",
+          "probability": 0.025
+        }
+      ],
+      "top_terms": [
+        "accounting",
+        "financial",
+        "finance",
+        "accountant",
+        "statement",
+        "account",
+        "financial statement",
+        "ledger"
+      ],
+      "text_stats": {
+        "word_count": 76,
+        "short_input": false
+      },
+      "source": "text",
+      "text_preview": null
+    }
+  },
+  "vague_short_demo": {
+    "status_code": 200,
+    "response": {
+      "predicted_category": "CONSTRUCTION",
+      "confidence": 0.14,
+      "calibrated_predicted_category": "ARTS",
+      "calibrated_confidence": 0.2646369773192147,
+      "calibrated_top_predictions": [
+        {
+          "category": "ARTS",
+          "probability": 0.2646369773192147
+        },
+        {
+          "category": "AUTOMOBILE",
+          "probability": 0.1688541035762789
+        },
+        {
+          "category": "AGRICULTURE",
+          "probability": 0.11570562373559057
+        }
+      ],
+      "is_uncertain": true,
+      "uncertainty_reason": "short_input",
+      "top_predictions": [
+        {
+          "category": "CONSTRUCTION",
+          "probability": 0.14
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.12
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.075
+        }
+      ],
+      "top_terms": [
+        "professional",
+        "skill",
+        "experienced",
+        "teamwork"
+      ],
+      "text_stats": {
+        "word_count": 6,
+        "short_input": true
+      },
+      "source": "text",
+      "text_preview": null
+    }
+  }
+}

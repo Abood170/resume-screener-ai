@@ -1,0 +1,435 @@
+{
+  "sampling": "Up to five errors per weakest class, numpy default_rng seed 42, no replacement; all errors when fewer available.",
+  "method": "In-memory whole-document structured reading using fixed lexical domains, label variants, length and section markers. No raw text or personal data emitted; indicators are not human-annotated causal explanations.",
+  "domains": {
+    "customer_operations": [
+      "customer service",
+      "call center",
+      "call centre",
+      "outsourcing",
+      "operations",
+      "process"
+    ],
+    "sales_business": [
+      "sales",
+      "marketing",
+      "business development",
+      "account management",
+      "retail"
+    ],
+    "technology": [
+      "software",
+      "programming",
+      "database",
+      "network",
+      "technical support",
+      "information technology"
+    ],
+    "creative_design": [
+      "design",
+      "designer",
+      "artist",
+      "art",
+      "graphic",
+      "creative"
+    ],
+    "education": [
+      "teacher",
+      "teaching",
+      "student",
+      "students",
+      "curriculum",
+      "classroom"
+    ],
+    "finance_accounting": [
+      "financial",
+      "accounting",
+      "banking",
+      "budget",
+      "audit"
+    ],
+    "engineering_automotive": [
+      "engineer",
+      "engineering",
+      "automotive",
+      "automobile",
+      "mechanical",
+      "manufacturing"
+    ],
+    "healthcare": [
+      "patient",
+      "clinical",
+      "medical",
+      "healthcare",
+      "nursing"
+    ]
+  },
+  "headings": [
+    "summary",
+    "experience",
+    "education",
+    "skills",
+    "employment",
+    "qualifications"
+  ],
+  "classes": [
+    {
+      "category": "BPO",
+      "test_support": 4,
+      "total_errors": 4,
+      "reviewed_count": 4,
+      "profiles": [
+        {
+          "row_index": 972,
+          "predicted_category": "SALES",
+          "word_count": 645,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 3,
+            "sales_business": 2,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 1,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 975,
+          "predicted_category": "CONSULTANT",
+          "word_count": 1125,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 2,
+            "sales_business": 4,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 2,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 984,
+          "predicted_category": "FINANCE",
+          "word_count": 726,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 3,
+          "domain_distinct_term_counts": {
+            "customer_operations": 2,
+            "sales_business": 1,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 2,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 993,
+          "predicted_category": "HEALTHCARE",
+          "word_count": 1278,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 3,
+            "sales_business": 1,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 1,
+            "engineering_automotive": 0,
+            "healthcare": 4
+          }
+        }
+      ],
+      "predicted_counts": {
+        "SALES": 1,
+        "CONSULTANT": 1,
+        "FINANCE": 1,
+        "HEALTHCARE": 1
+      },
+      "word_count_min": 645,
+      "word_count_max": 1278,
+      "short_count": 0,
+      "own_label_present_count": 2,
+      "predicted_label_present_count": 4,
+      "fewer_than_two_headings_count": 0,
+      "domain_presence_counts": {
+        "customer_operations": 4,
+        "sales_business": 4,
+        "technology": 4,
+        "creative_design": 0,
+        "education": 0,
+        "finance_accounting": 4,
+        "engineering_automotive": 0,
+        "healthcare": 1
+      }
+    },
+    {
+      "category": "AUTOMOBILE",
+      "test_support": 7,
+      "total_errors": 6,
+      "reviewed_count": 5,
+      "profiles": [
+        {
+          "row_index": 1321,
+          "predicted_category": "AVIATION",
+          "word_count": 1001,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 2,
+            "sales_business": 0,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 2,
+            "engineering_automotive": 3,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 1333,
+          "predicted_category": "ARTS",
+          "word_count": 278,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 0,
+            "sales_business": 0,
+            "technology": 0,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 0,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 1336,
+          "predicted_category": "ACCOUNTANT",
+          "word_count": 840,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 3,
+            "sales_business": 2,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 1,
+            "engineering_automotive": 1,
+            "healthcare": 1
+          }
+        },
+        {
+          "row_index": 1339,
+          "predicted_category": "ENGINEERING",
+          "word_count": 462,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 5,
+          "domain_distinct_term_counts": {
+            "customer_operations": 1,
+            "sales_business": 0,
+            "technology": 1,
+            "creative_design": 0,
+            "education": 1,
+            "finance_accounting": 0,
+            "engineering_automotive": 3,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 1352,
+          "predicted_category": "BANKING",
+          "word_count": 609,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 3,
+            "sales_business": 2,
+            "technology": 2,
+            "creative_design": 0,
+            "education": 2,
+            "finance_accounting": 2,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        }
+      ],
+      "predicted_counts": {
+        "AVIATION": 1,
+        "ARTS": 1,
+        "ACCOUNTANT": 1,
+        "ENGINEERING": 1,
+        "BANKING": 1
+      },
+      "word_count_min": 278,
+      "word_count_max": 1001,
+      "short_count": 0,
+      "own_label_present_count": 2,
+      "predicted_label_present_count": 5,
+      "fewer_than_two_headings_count": 0,
+      "domain_presence_counts": {
+        "customer_operations": 4,
+        "sales_business": 2,
+        "technology": 4,
+        "creative_design": 0,
+        "education": 2,
+        "finance_accounting": 3,
+        "engineering_automotive": 3,
+        "healthcare": 1
+      }
+    },
+    {
+      "category": "ARTS",
+      "test_support": 21,
+      "total_errors": 16,
+      "reviewed_count": 5,
+      "profiles": [
+        {
+          "row_index": 2279,
+          "predicted_category": "TEACHER",
+          "word_count": 941,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 3,
+          "domain_distinct_term_counts": {
+            "customer_operations": 0,
+            "sales_business": 0,
+            "technology": 0,
+            "creative_design": 2,
+            "education": 5,
+            "finance_accounting": 0,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 2328,
+          "predicted_category": "INFORMATION-TECHNOLOGY",
+          "word_count": 657,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": false,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 0,
+            "sales_business": 0,
+            "technology": 3,
+            "creative_design": 1,
+            "education": 0,
+            "finance_accounting": 0,
+            "engineering_automotive": 2,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 2329,
+          "predicted_category": "PUBLIC-RELATIONS",
+          "word_count": 692,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 2,
+            "sales_business": 2,
+            "technology": 2,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 3,
+            "engineering_automotive": 1,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 2350,
+          "predicted_category": "SALES",
+          "word_count": 244,
+          "short_under_50": false,
+          "own_label_variant_present": true,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 4,
+          "domain_distinct_term_counts": {
+            "customer_operations": 1,
+            "sales_business": 1,
+            "technology": 0,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 0,
+            "engineering_automotive": 0,
+            "healthcare": 0
+          }
+        },
+        {
+          "row_index": 2356,
+          "predicted_category": "HEALTHCARE",
+          "word_count": 813,
+          "short_under_50": false,
+          "own_label_variant_present": false,
+          "predicted_label_variant_present": true,
+          "recognized_section_heading_count": 3,
+          "domain_distinct_term_counts": {
+            "customer_operations": 1,
+            "sales_business": 2,
+            "technology": 2,
+            "creative_design": 0,
+            "education": 0,
+            "finance_accounting": 0,
+            "engineering_automotive": 0,
+            "healthcare": 4
+          }
+        }
+      ],
+      "predicted_counts": {
+        "TEACHER": 1,
+        "INFORMATION-TECHNOLOGY": 1,
+        "PUBLIC-RELATIONS": 1,
+        "SALES": 1,
+        "HEALTHCARE": 1
+      },
+      "word_count_min": 244,
+      "word_count_max": 941,
+      "short_count": 0,
+      "own_label_present_count": 3,
+      "predicted_label_present_count": 4,
+      "fewer_than_two_headings_count": 0,
+      "domain_presence_counts": {
+        "customer_operations": 3,
+        "sales_business": 3,
+        "technology": 3,
+        "creative_design": 2,
+        "education": 1,
+        "finance_accounting": 1,
+        "engineering_automotive": 2,
+        "healthcare": 1
+      }
+    }
+  ]
+}

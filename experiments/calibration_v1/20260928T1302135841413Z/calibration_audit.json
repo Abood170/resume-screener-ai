@@ -1,0 +1,329 @@
+{
+  "source": "Saved once-only test probabilities; no new inference or selection",
+  "class_order_matches": true,
+  "train_test_and_nested_folds_disjoint": true,
+  "base_model_and_vectorizer_unchanged": true,
+  "changed_category_count": 60,
+  "wrong_to_correct": 38,
+  "correct_to_wrong": 8,
+  "changed_but_both_wrong": 14,
+  "class_report_before": {
+    "ACCOUNTANT": {
+      "precision": 0.5897435897435898,
+      "recall": 0.9583333333333334,
+      "f1-score": 0.7301587301587301,
+      "support": 24.0
+    },
+    "ADVOCATE": {
+      "precision": 0.8636363636363636,
+      "recall": 0.7916666666666666,
+      "f1-score": 0.8260869565217391,
+      "support": 24.0
+    },
+    "AGRICULTURE": {
+      "precision": 1.0,
+      "recall": 0.3076923076923077,
+      "f1-score": 0.47058823529411764,
+      "support": 13.0
+    },
+    "APPAREL": {
+      "precision": 1.0,
+      "recall": 0.3684210526315789,
+      "f1-score": 0.5384615384615384,
+      "support": 19.0
+    },
+    "ARTS": {
+      "precision": 0.625,
+      "recall": 0.23809523809523808,
+      "f1-score": 0.3448275862068966,
+      "support": 21.0
+    },
+    "AUTOMOBILE": {
+      "precision": 1.0,
+      "recall": 0.14285714285714285,
+      "f1-score": 0.25,
+      "support": 7.0
+    },
+    "AVIATION": {
+      "precision": 0.8095238095238095,
+      "recall": 0.7391304347826086,
+      "f1-score": 0.7727272727272727,
+      "support": 23.0
+    },
+    "BANKING": {
+      "precision": 0.7894736842105263,
+      "recall": 0.6521739130434783,
+      "f1-score": 0.7142857142857143,
+      "support": 23.0
+    },
+    "BPO": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "BUSINESS-DEVELOPMENT": {
+      "precision": 0.8461538461538461,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.88,
+      "support": 24.0
+    },
+    "CHEF": {
+      "precision": 0.8095238095238095,
+      "recall": 0.7083333333333334,
+      "f1-score": 0.7555555555555555,
+      "support": 24.0
+    },
+    "CONSTRUCTION": {
+      "precision": 0.9130434782608695,
+      "recall": 0.9545454545454546,
+      "f1-score": 0.9333333333333333,
+      "support": 22.0
+    },
+    "CONSULTANT": {
+      "precision": 0.75,
+      "recall": 0.5217391304347826,
+      "f1-score": 0.6153846153846154,
+      "support": 23.0
+    },
+    "DESIGNER": {
+      "precision": 0.8333333333333334,
+      "recall": 0.9523809523809523,
+      "f1-score": 0.8888888888888888,
+      "support": 21.0
+    },
+    "DIGITAL-MEDIA": {
+      "precision": 0.8666666666666667,
+      "recall": 0.6842105263157895,
+      "f1-score": 0.7647058823529411,
+      "support": 19.0
+    },
+    "ENGINEERING": {
+      "precision": 0.8076923076923077,
+      "recall": 0.875,
+      "f1-score": 0.84,
+      "support": 24.0
+    },
+    "FINANCE": {
+      "precision": 0.6818181818181818,
+      "recall": 0.625,
+      "f1-score": 0.6521739130434783,
+      "support": 24.0
+    },
+    "FITNESS": {
+      "precision": 0.8,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.8163265306122449,
+      "support": 24.0
+    },
+    "HEALTHCARE": {
+      "precision": 0.7272727272727273,
+      "recall": 0.6956521739130435,
+      "f1-score": 0.7111111111111111,
+      "support": 23.0
+    },
+    "HR": {
+      "precision": 0.8148148148148148,
+      "recall": 1.0,
+      "f1-score": 0.8979591836734694,
+      "support": 22.0
+    },
+    "INFORMATION-TECHNOLOGY": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 24.0
+    },
+    "PUBLIC-RELATIONS": {
+      "precision": 0.6206896551724138,
+      "recall": 0.8181818181818182,
+      "f1-score": 0.7058823529411765,
+      "support": 22.0
+    },
+    "SALES": {
+      "precision": 0.6,
+      "recall": 0.782608695652174,
+      "f1-score": 0.6792452830188679,
+      "support": 23.0
+    },
+    "TEACHER": {
+      "precision": 0.5882352941176471,
+      "recall": 1.0,
+      "f1-score": 0.7407407407407407,
+      "support": 20.0
+    },
+    "accuracy": 0.744466800804829,
+    "macro avg": {
+      "precision": 0.7501370095253156,
+      "recall": 0.6902509239108209,
+      "f1-score": 0.6803518093463513,
+      "support": 497.0
+    },
+    "weighted avg": {
+      "precision": 0.7638717844250997,
+      "recall": 0.744466800804829,
+      "f1-score": 0.7257728739768949,
+      "support": 497.0
+    }
+  },
+  "class_report_after": {
+    "ACCOUNTANT": {
+      "precision": 0.7586206896551724,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.8301886792452831,
+      "support": 24.0
+    },
+    "ADVOCATE": {
+      "precision": 0.7777777777777778,
+      "recall": 0.875,
+      "f1-score": 0.8235294117647058,
+      "support": 24.0
+    },
+    "AGRICULTURE": {
+      "precision": 1.0,
+      "recall": 0.6923076923076923,
+      "f1-score": 0.8181818181818182,
+      "support": 13.0
+    },
+    "APPAREL": {
+      "precision": 1.0,
+      "recall": 0.5263157894736842,
+      "f1-score": 0.6896551724137931,
+      "support": 19.0
+    },
+    "ARTS": {
+      "precision": 0.6666666666666666,
+      "recall": 0.5714285714285714,
+      "f1-score": 0.6153846153846154,
+      "support": 21.0
+    },
+    "AUTOMOBILE": {
+      "precision": 0.6,
+      "recall": 0.42857142857142855,
+      "f1-score": 0.5,
+      "support": 7.0
+    },
+    "AVIATION": {
+      "precision": 0.9,
+      "recall": 0.782608695652174,
+      "f1-score": 0.8372093023255814,
+      "support": 23.0
+    },
+    "BANKING": {
+      "precision": 0.7619047619047619,
+      "recall": 0.6956521739130435,
+      "f1-score": 0.7272727272727273,
+      "support": 23.0
+    },
+    "BPO": {
+      "precision": 0.2857142857142857,
+      "recall": 0.5,
+      "f1-score": 0.36363636363636365,
+      "support": 4.0
+    },
+    "BUSINESS-DEVELOPMENT": {
+      "precision": 0.9583333333333334,
+      "recall": 0.9583333333333334,
+      "f1-score": 0.9583333333333334,
+      "support": 24.0
+    },
+    "CHEF": {
+      "precision": 0.85,
+      "recall": 0.7083333333333334,
+      "f1-score": 0.7727272727272727,
+      "support": 24.0
+    },
+    "CONSTRUCTION": {
+      "precision": 0.9545454545454546,
+      "recall": 0.9545454545454546,
+      "f1-score": 0.9545454545454546,
+      "support": 22.0
+    },
+    "CONSULTANT": {
+      "precision": 0.7391304347826086,
+      "recall": 0.7391304347826086,
+      "f1-score": 0.7391304347826086,
+      "support": 23.0
+    },
+    "DESIGNER": {
+      "precision": 0.9090909090909091,
+      "recall": 0.9523809523809523,
+      "f1-score": 0.9302325581395349,
+      "support": 21.0
+    },
+    "DIGITAL-MEDIA": {
+      "precision": 0.9285714285714286,
+      "recall": 0.6842105263157895,
+      "f1-score": 0.7878787878787878,
+      "support": 19.0
+    },
+    "ENGINEERING": {
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1-score": 0.875,
+      "support": 24.0
+    },
+    "FINANCE": {
+      "precision": 0.7692307692307693,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.8,
+      "support": 24.0
+    },
+    "FITNESS": {
+      "precision": 0.8461538461538461,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.88,
+      "support": 24.0
+    },
+    "HEALTHCARE": {
+      "precision": 0.75,
+      "recall": 0.6521739130434783,
+      "f1-score": 0.6976744186046512,
+      "support": 23.0
+    },
+    "HR": {
+      "precision": 0.8076923076923077,
+      "recall": 0.9545454545454546,
+      "f1-score": 0.875,
+      "support": 22.0
+    },
+    "INFORMATION-TECHNOLOGY": {
+      "precision": 0.8518518518518519,
+      "recall": 0.9583333333333334,
+      "f1-score": 0.9019607843137255,
+      "support": 24.0
+    },
+    "PUBLIC-RELATIONS": {
+      "precision": 0.7391304347826086,
+      "recall": 0.7727272727272727,
+      "f1-score": 0.7555555555555555,
+      "support": 22.0
+    },
+    "SALES": {
+      "precision": 0.59375,
+      "recall": 0.8260869565217391,
+      "f1-score": 0.6909090909090909,
+      "support": 23.0
+    },
+    "TEACHER": {
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1-score": 0.8571428571428571,
+      "support": 20.0
+    },
+    "accuracy": 0.8048289738430584,
+    "macro avg": {
+      "precision": 0.7975561154139834,
+      "recall": 0.7780979992865005,
+      "f1-score": 0.7783811932565733,
+      "support": 497.0
+    },
+    "weighted avg": {
+      "precision": 0.8170777827577131,
+      "recall": 0.8048289738430584,
+      "f1-score": 0.8033387309826067,
+      "support": 497.0
+    }
+  },
+  "interpretation": "Class-specific OvR sigmoid mappings can reorder multiclass winners; this is not a monotonic transformation of the top score alone. The gain is accompanied by some regressions. Original title/template shortcut risks remain; no independent external validation is claimed."
+}

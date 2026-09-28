@@ -1,0 +1,281 @@
+{
+  "category_counts": {
+    "ACCOUNTANT": 118,
+    "ADVOCATE": 118,
+    "AGRICULTURE": 63,
+    "APPAREL": 97,
+    "ARTS": 103,
+    "AUTOMOBILE": 36,
+    "AVIATION": 117,
+    "BANKING": 115,
+    "BPO": 22,
+    "BUSINESS-DEVELOPMENT": 120,
+    "CHEF": 118,
+    "CONSTRUCTION": 112,
+    "CONSULTANT": 115,
+    "DESIGNER": 107,
+    "DIGITAL-MEDIA": 96,
+    "ENGINEERING": 118,
+    "FINANCE": 118,
+    "FITNESS": 117,
+    "HEALTHCARE": 115,
+    "HR": 110,
+    "INFORMATION-TECHNOLOGY": 120,
+    "PUBLIC-RELATIONS": 111,
+    "SALES": 116,
+    "TEACHER": 102
+  },
+  "word_length_statistics": {
+    "count": 2484.0,
+    "mean": 811.3256843800322,
+    "std": 371.0069064804546,
+    "min": 0.0,
+    "25%": 651.0,
+    "50%": 757.0,
+    "75%": 933.0,
+    "max": 5190.0
+  },
+  "frequent_terms_per_category": {
+    "ACCOUNTANT": {
+      "accounting": 1226,
+      "account": 1117,
+      "financial": 1081,
+      "company": 851,
+      "state": 822,
+      "city": 680,
+      "report": 592,
+      "management": 585
+    },
+    "ADVOCATE": {
+      "customer": 1006,
+      "state": 944,
+      "city": 834,
+      "service": 802,
+      "company": 745,
+      "name": 623,
+      "skill": 535,
+      "client": 485
+    },
+    "AGRICULTURE": {
+      "state": 485,
+      "city": 406,
+      "company": 356,
+      "name": 306,
+      "management": 285,
+      "program": 234,
+      "project": 234,
+      "student": 205
+    },
+    "APPAREL": {
+      "state": 762,
+      "company": 744,
+      "city": 728,
+      "customer": 716,
+      "sale": 686,
+      "name": 573,
+      "product": 442,
+      "store": 393
+    },
+    "ARTS": {
+      "state": 758,
+      "student": 656,
+      "city": 632,
+      "art": 617,
+      "company": 532,
+      "name": 456,
+      "school": 435,
+      "skill": 397
+    },
+    "AUTOMOBILE": {
+      "customer": 308,
+      "state": 287,
+      "company": 258,
+      "city": 252,
+      "service": 250,
+      "name": 209,
+      "management": 164,
+      "data": 132
+    },
+    "AVIATION": {
+      "state": 702,
+      "city": 606,
+      "system": 586,
+      "company": 539,
+      "management": 530,
+      "training": 488,
+      "aviation": 472,
+      "customer": 470
+    },
+    "BANKING": {
+      "management": 774,
+      "business": 724,
+      "state": 708,
+      "company": 703,
+      "customer": 638,
+      "city": 627,
+      "service": 604,
+      "client": 594
+    },
+    "BPO": {
+      "management": 208,
+      "client": 146,
+      "team": 144,
+      "company": 133,
+      "process": 125,
+      "service": 117,
+      "city": 116,
+      "name": 115
+    },
+    "BUSINESS-DEVELOPMENT": {
+      "sale": 1473,
+      "business": 1219,
+      "company": 879,
+      "state": 825,
+      "development": 777,
+      "customer": 738,
+      "city": 722,
+      "management": 633
+    },
+    "CHEF": {
+      "food": 1432,
+      "state": 841,
+      "chef": 773,
+      "city": 763,
+      "company": 706,
+      "kitchen": 617,
+      "name": 594,
+      "service": 541
+    },
+    "CONSTRUCTION": {
+      "project": 1542,
+      "construction": 1354,
+      "state": 755,
+      "city": 727,
+      "company": 710,
+      "management": 633,
+      "name": 540,
+      "work": 510
+    },
+    "CONSULTANT": {
+      "management": 791,
+      "company": 777,
+      "state": 757,
+      "business": 676,
+      "city": 667,
+      "system": 564,
+      "name": 534,
+      "client": 523
+    },
+    "DESIGNER": {
+      "design": 1058,
+      "state": 751,
+      "city": 730,
+      "company": 662,
+      "designer": 565,
+      "name": 546,
+      "project": 446,
+      "product": 313
+    },
+    "DIGITAL-MEDIA": {
+      "marketing": 786,
+      "company": 701,
+      "state": 642,
+      "medium": 622,
+      "city": 605,
+      "name": 511,
+      "digital": 480,
+      "client": 467
+    },
+    "ENGINEERING": {
+      "engineering": 971,
+      "project": 759,
+      "system": 745,
+      "company": 660,
+      "city": 646,
+      "state": 643,
+      "management": 523,
+      "process": 515
+    },
+    "FINANCE": {
+      "financial": 1110,
+      "company": 839,
+      "management": 791,
+      "finance": 779,
+      "state": 764,
+      "city": 694,
+      "accounting": 664,
+      "business": 618
+    },
+    "FITNESS": {
+      "state": 777,
+      "fitness": 731,
+      "city": 713,
+      "company": 685,
+      "customer": 652,
+      "name": 541,
+      "service": 511,
+      "sale": 495
+    },
+    "HEALTHCARE": {
+      "state": 856,
+      "patient": 804,
+      "city": 746,
+      "company": 707,
+      "management": 679,
+      "customer": 604,
+      "service": 598,
+      "name": 562
+    },
+    "HR": {
+      "employee": 1328,
+      "hr": 1056,
+      "management": 950,
+      "company": 770,
+      "state": 699,
+      "resource": 616,
+      "human": 597,
+      "city": 568
+    },
+    "INFORMATION-TECHNOLOGY": {
+      "system": 1325,
+      "management": 899,
+      "information": 860,
+      "technology": 820,
+      "network": 755,
+      "project": 706,
+      "support": 681,
+      "state": 665
+    },
+    "PUBLIC-RELATIONS": {
+      "medium": 855,
+      "company": 837,
+      "relation": 760,
+      "public": 744,
+      "marketing": 733,
+      "state": 721,
+      "city": 689,
+      "communication": 655
+    },
+    "SALES": {
+      "customer": 1427,
+      "sale": 1385,
+      "company": 765,
+      "state": 765,
+      "city": 713,
+      "service": 669,
+      "name": 544,
+      "skill": 441
+    },
+    "TEACHER": {
+      "student": 1120,
+      "state": 746,
+      "teacher": 708,
+      "city": 641,
+      "company": 500,
+      "education": 470,
+      "name": 444,
+      "child": 428
+    }
+  },
+  "raw_exact_duplicate_texts": 2
+}

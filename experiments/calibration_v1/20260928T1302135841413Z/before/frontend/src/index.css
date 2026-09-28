@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    font-family:
+      "Segoe UI",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+    min-width: 320px;
+  }
+  button {
+    cursor: pointer;
+  }
+  button,
+  a,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #246b53;
+    outline-offset: 4px;
+  }
+  ::selection {
+    background: #d5e6cf;
+    color: #172c2a;
+  }
+}
+@layer components {
+  .step-label {
+    @apply flex h-6 w-6 items-center justify-center rounded-md border border-line bg-canvas text-[10px] font-medium text-muted;
+  }
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.result-enter {
+  animation: reveal 220ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .result-enter {
+    animation: none;
+  }
+}

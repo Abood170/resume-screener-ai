@@ -1,0 +1,11 @@
+{
+  "source": "https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset",
+  "download_url": "https://www.kaggle.com/api/v1/datasets/download/snehaanbhawal/resume-dataset",
+  "synthetic": false,
+  "archive_sha256": "b12c4ab34df707ad2cc64312c016509cad9b6c93b0baed7a6a2c7cbd6b2b7aa4",
+  "csv_sha256": "76275a0d8e029e4fb46250296c0a25661bd44534ccdec034f4a19f42bbc753a0",
+  "archive_member": "Resume/Resume.csv",
+  "raw_rows": 2484,
+  "raw_categories": 24,
+  "transformation": "Rename Resume_str to Resume; retain Resume and Category only"
+}

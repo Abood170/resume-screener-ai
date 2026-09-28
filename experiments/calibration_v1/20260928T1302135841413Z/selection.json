@@ -1,0 +1,19 @@
+{
+  "method": "sigmoid",
+  "t1": 0.3,
+  "t2": 0.15,
+  "short_input_words": 50,
+  "training_policy": {
+    "t1": 0.3,
+    "t2": 0.15,
+    "answered": 1693,
+    "total": 1984,
+    "coverage": 0.8533266129032258,
+    "accuracy_on_answered": 0.828706438275251,
+    "correct_answered": 1403,
+    "wrong_answered": 290,
+    "utility": 0.5609879032258065
+  },
+  "protocol_sha256": "9a4902ef97d09965d8d2b074f1ff56787a21a5e363e7ca58d5f3f58efdbe194f",
+  "selection_data": "Training partition nested OOF predictions only; tuning scores are not independent estimates after selection."
+}

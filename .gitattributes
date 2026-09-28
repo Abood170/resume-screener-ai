@@ -1,0 +1,9 @@
+# Preserve recorded checksums across Windows and Linux checkouts.
+* -text
+# Store deployable artifacts in the repository through Git LFS.
+models/*.joblib filter=lfs diff=lfs merge=lfs -text
+experiments/**/*.joblib filter=lfs diff=lfs merge=lfs -text
+data/resumes.csv filter=lfs diff=lfs merge=lfs -text
+# Preserve CSV bytes for provenance hashes; keep deployment files Unix-friendly.
+Dockerfile text eol=lf
+.dockerignore text eol=lf

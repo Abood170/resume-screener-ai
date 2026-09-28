@@ -1,0 +1,22 @@
+.venv/
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
+notebooks/
+tests/
+.git/
+.pytest_cache/
+.ruff_cache/
+**/.ipynb_checkpoints/
+reports/pytest.xml
+frontend/
+experiments/
+**/node_modules/
+.env
+.env.*
+**/*.log
+data/source.zip
+# Keep the trained artifacts, checksum manifest, and source CSV in the image.
+!models/
+!models/**
+!data/resumes.csv

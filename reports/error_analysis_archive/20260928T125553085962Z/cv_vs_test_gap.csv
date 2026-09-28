@@ -1,0 +1,2 @@
+cv_macro_f1_mean,cv_macro_f1_std,test_macro_f1,test_minus_cv_macro_f1,interpretation
+0.6577281212720567,0.01833295124954121,0.6803518093463513,0.0226236880742946,"Test macro F1 exceeds mean CV macro F1 by 0.0226236880742946; different data and fit sizes, not evidence of significance or improvement."

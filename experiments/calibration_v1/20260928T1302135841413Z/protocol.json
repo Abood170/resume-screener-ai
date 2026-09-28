@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "outer_cv": 5,
+  "inner_cv": 5,
+  "methods": [
+    "sigmoid",
+    "isotonic"
+  ],
+  "selection": "Among methods improving pooled nested-OOF log loss AND Brier versus raw, with accuracy and macro F1 no more than 0.01 lower, minimize pooled OOF log loss; Brier breaks ties, then sigmoid. Otherwise retain raw.",
+  "material_degradation_tolerance": 0.01,
+  "threshold_t1_grid": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "threshold_t2_grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "threshold_selection": "Maximize pooled training OOF utility: correct +1, wrong -1, abstain 0; ties higher coverage then lower T1 then lower T2. Compare no numerical abstention (0,0), retaining short-input abstention. No target accuracy or coverage.",
+  "short_input_words": 50,
+  "uncertainty": "short_input (<50 words) OR top_probability<T1 OR top1_minus_top2<T2; reason priority short_input, low_confidence, small_margin",
+  "brier_definition": "mean(sum_class((probability - one_hot_label)^2)); range [0,2]",
+  "ece_definition": "Top-label ECE, 10 equal-width bins [lower,upper), final bin includes 1; weighted absolute bin accuracy-minus-mean-confidence; empty bins contribute zero.",
+  "data_hash": "76275a0d8e029e4fb46250296c0a25661bd44534ccdec034f4a19f42bbc753a0",
+  "split_hash": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3"
+}
