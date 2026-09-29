@@ -1,0 +1,27 @@
+{
+  "space": {
+    "tfidf__min_df": [
+      2,
+      3
+    ],
+    "tfidf__max_df": [
+      0.9,
+      0.95
+    ],
+    "tfidf__max_features": [
+      5000,
+      10000,
+      20000
+    ],
+    "classifier__max_depth": [
+      null,
+      30
+    ],
+    "classifier__min_samples_leaf": [
+      1,
+      2
+    ]
+  },
+  "elapsed_seconds": 222.97092170000178,
+  "trials": 8
+}

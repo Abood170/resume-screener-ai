@@ -1,0 +1,22 @@
+{
+  "id": "V3-7",
+  "stage": "randomized_search",
+  "family": "random_forest",
+  "params": {
+    "tfidf__min_df": 3,
+    "tfidf__max_features": 5000,
+    "tfidf__max_df": 0.95,
+    "classifier__min_samples_leaf": 2,
+    "classifier__max_depth": 30
+  },
+  "fold_scores": [
+    0.5863877114086966,
+    0.6150467258999948,
+    0.6401949739298424,
+    0.5955829552194972,
+    0.6249275418198071
+  ],
+  "mean": 0.6124279816555676,
+  "std": 0.019472818367348797,
+  "seconds": 27.1693332195282
+}

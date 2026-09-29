@@ -1,0 +1,326 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Resume Screener AI",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "summary": "Predict",
+        "operationId": "predict_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResumeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict/file": {
+      "post": {
+        "summary": "Predict File",
+        "operationId": "predict_file_predict_file_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "type": "object",
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CategoryProbability": {
+        "properties": {
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability"
+          }
+        },
+        "type": "object",
+        "required": [
+          "category",
+          "probability"
+        ],
+        "title": "CategoryProbability"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "PredictionResponse": {
+        "properties": {
+          "predicted_category": {
+            "type": "string",
+            "title": "Predicted Category",
+            "description": "Legacy uncalibrated Random Forest winner; use calibrated_predicted_category in new clients."
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence",
+            "description": "Legacy uncalibrated probability; retained without changing its meaning."
+          },
+          "calibrated_predicted_category": {
+            "type": "string",
+            "title": "Calibrated Predicted Category",
+            "description": "Category with the largest calibrated probability; may differ from the legacy winner."
+          },
+          "calibrated_confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Calibrated Confidence",
+            "description": "Calibrated probability of calibrated_predicted_category, not a correctness guarantee or candidate quality score."
+          },
+          "calibrated_top_predictions": {
+            "items": {
+              "$ref": "#/components/schemas/CategoryProbability"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Calibrated Top Predictions",
+            "description": "Calibrated top three candidates; retained even when uncertain; not renormalized to sum to one."
+          },
+          "is_uncertain": {
+            "type": "boolean",
+            "title": "Is Uncertain",
+            "description": "True when short input, low calibrated top probability, or small calibrated top-two margin triggers abstention."
+          },
+          "uncertainty_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "low_confidence",
+                  "small_margin",
+                  "short_input"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uncertainty Reason",
+            "description": "Reason priority: short_input, low_confidence, small_margin; null means no policy trigger, not guaranteed correctness."
+          },
+          "top_predictions": {
+            "items": {
+              "$ref": "#/components/schemas/CategoryProbability"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Top Predictions"
+          },
+          "top_terms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "title": "Top Terms"
+          },
+          "text_stats": {
+            "$ref": "#/components/schemas/TextStats"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "text",
+              "file"
+            ],
+            "title": "Source"
+          },
+          "text_preview": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text Preview"
+          }
+        },
+        "type": "object",
+        "required": [
+          "predicted_category",
+          "confidence",
+          "calibrated_predicted_category",
+          "calibrated_confidence",
+          "calibrated_top_predictions",
+          "is_uncertain",
+          "uncertainty_reason",
+          "top_predictions",
+          "top_terms",
+          "text_stats",
+          "source"
+        ],
+        "title": "PredictionResponse"
+      },
+      "ResumeRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 50000,
+            "minLength": 1,
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "ResumeRequest"
+      },
+      "TextStats": {
+        "properties": {
+          "word_count": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Word Count"
+          },
+          "short_input": {
+            "type": "boolean",
+            "title": "Short Input"
+          }
+        },
+        "type": "object",
+        "required": [
+          "word_count",
+          "short_input"
+        ],
+        "title": "TextStats"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "clear_accounting_demo": {
+    "status_code": 200,
+    "response": {
+      "predicted_category": "ACCOUNTANT",
+      "confidence": 0.675,
+      "calibrated_predicted_category": "ACCOUNTANT",
+      "calibrated_confidence": 0.6463547658669152,
+      "calibrated_top_predictions": [
+        {
+          "category": "ACCOUNTANT",
+          "probability": 0.6463547658669152
+        },
+        {
+          "category": "FINANCE",
+          "probability": 0.22120984156348816
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.010829865275572736
+        }
+      ],
+      "is_uncertain": false,
+      "uncertainty_reason": null,
+      "top_predictions": [
+        {
+          "category": "ACCOUNTANT",
+          "probability": 0.675
+        },
+        {
+          "category": "FINANCE",
+          "probability": 0.205
+        },
+        {
+          "category": "BANKING",
+          "probability": 0.03
+        }
+      ],
+      "top_terms": [
+        "statement",
+        "account",
+        "reconciliation",
+        "bank",
+        "ledger",
+        "general ledger",
+        "tax",
+        "report"
+      ],
+      "text_stats": {
+        "word_count": 76,
+        "short_input": false
+      },
+      "source": "text",
+      "text_preview": null
+    }
+  },
+  "vague_short_demo": {
+    "status_code": 200,
+    "response": {
+      "predicted_category": "DESIGNER",
+      "confidence": 0.21,
+      "calibrated_predicted_category": "DESIGNER",
+      "calibrated_confidence": 0.5118634800534875,
+      "calibrated_top_predictions": [
+        {
+          "category": "DESIGNER",
+          "probability": 0.5118634800534875
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.10210620648298938
+        },
+        {
+          "category": "CONSTRUCTION",
+          "probability": 0.08454123459680304
+        }
+      ],
+      "is_uncertain": true,
+      "uncertainty_reason": "short_input",
+      "top_predictions": [
+        {
+          "category": "DESIGNER",
+          "probability": 0.21
+        },
+        {
+          "category": "CONSTRUCTION",
+          "probability": 0.125
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.115
+        }
+      ],
+      "top_terms": [
+        "professional",
+        "skill",
+        "experienced",
+        "teamwork"
+      ],
+      "text_stats": {
+        "word_count": 6,
+        "short_input": true
+      },
+      "source": "text",
+      "text_preview": null
+    }
+  }
+}

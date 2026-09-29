@@ -1,0 +1,47 @@
+{
+  "candidate": "word_svc",
+  "classes": [
+    "ACCOUNTANT",
+    "ADVOCATE",
+    "AGRICULTURE",
+    "APPAREL",
+    "ARTS",
+    "AUTOMOBILE",
+    "AVIATION",
+    "BANKING",
+    "BPO",
+    "BUSINESS-DEVELOPMENT",
+    "CHEF",
+    "CONSTRUCTION",
+    "CONSULTANT",
+    "DESIGNER",
+    "DIGITAL-MEDIA",
+    "ENGINEERING",
+    "FINANCE",
+    "FITNESS",
+    "HEALTHCARE",
+    "HR",
+    "INFORMATION-TECHNOLOGY",
+    "PUBLIC-RELATIONS",
+    "SALES",
+    "TEACHER"
+  ],
+  "calibration": "sigmoid",
+  "policy": {
+    "t1": 0.4,
+    "t2": 0.05,
+    "answered": 1303,
+    "total": 1984,
+    "coverage": 0.6567540322580645,
+    "accuracy_on_answered": 0.6976208749040675,
+    "correct_answered": 909,
+    "wrong_answered": 394,
+    "utility": 0.2595766129032258
+  },
+  "selection_sha256": "b8971bb49eb35bf084087ed49a19cdb793b38b143bd56ec34851aff4856e71f1",
+  "artifacts": {
+    "calibrator.joblib": "9213119ecf39878ebfd69ef39525ba2921173442fe61618f7c42773685acef8e",
+    "pipeline.joblib": "7afebd8f4068d120bccaffb15e5a04881c12c18a15ab82d0a466de69b6cd13d3"
+  },
+  "deployment_status": "Offline candidate; not integrated into or promoted to production API"
+}

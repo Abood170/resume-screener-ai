@@ -1,0 +1,12 @@
+{
+  "selected_model": "masked_random_forest_sigmoid",
+  "models": {
+    "masked_random_forest_sigmoid": {
+      "cv_macro_f1_mean": 0.5317317225299487,
+      "cv_macro_f1_std": 0.009913121069946657,
+      "macro_f1": 0.5580907457690872,
+      "accuracy": 0.5955734406438632,
+      "fit_seconds": 13.244835800000146
+    }
+  }
+}

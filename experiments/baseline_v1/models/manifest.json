@@ -1,0 +1,46 @@
+{
+  "selected_model": "random_forest",
+  "classes": [
+    "ACCOUNTANT",
+    "ADVOCATE",
+    "AGRICULTURE",
+    "APPAREL",
+    "ARTS",
+    "AUTOMOBILE",
+    "AVIATION",
+    "BANKING",
+    "BPO",
+    "BUSINESS-DEVELOPMENT",
+    "CHEF",
+    "CONSTRUCTION",
+    "CONSULTANT",
+    "DESIGNER",
+    "DIGITAL-MEDIA",
+    "ENGINEERING",
+    "FINANCE",
+    "FITNESS",
+    "HEALTHCARE",
+    "HR",
+    "INFORMATION-TECHNOLOGY",
+    "PUBLIC-RELATIONS",
+    "SALES",
+    "TEACHER"
+  ],
+  "dataset_sha256": "76275a0d8e029e4fb46250296c0a25661bd44534ccdec034f4a19f42bbc753a0",
+  "artifacts": {
+    "model.joblib": "35dac25b0b8795379ce656dcd614b238ece63ee20ff03690432fbe36431b5468",
+    "vectorizer.joblib": "d10749ae719d3504730f520909ed457b12d661a26f193b09e1c4671566c22040",
+    "calibrator.joblib": "c6d1b8410728402c6bb1dcdb884fd859435dcad73c6759150364b7dbedb950d5"
+  },
+  "calibration": {
+    "artifact": "calibrator.joblib",
+    "method": "sigmoid",
+    "run_directory": "experiments/calibration_v1/20260928T1302135841413Z",
+    "protocol_sha256": "9a4902ef97d09965d8d2b074f1ff56787a21a5e363e7ca58d5f3f58efdbe194f"
+  },
+  "abstain": {
+    "t1": 0.3,
+    "t2": 0.15,
+    "short_input_words": 50
+  }
+}

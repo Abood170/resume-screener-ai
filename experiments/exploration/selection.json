@@ -1,0 +1,17 @@
+{
+  "ranking": [
+    "word_svc",
+    "word_char_svc",
+    "char_svc",
+    "word_lr",
+    "balanced_rf",
+    "technical_rf",
+    "control_rf"
+  ],
+  "finalists": [
+    "word_svc",
+    "word_char_svc"
+  ],
+  "selected_on": "Training CV only",
+  "protocol_sha256": "197ae48568ebdaa1670c9e502a98627e2b87d3ea2674388802472f9559c3c75c"
+}

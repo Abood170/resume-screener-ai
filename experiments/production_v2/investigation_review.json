@@ -1,0 +1,44 @@
+{
+  "integrity_passed": true,
+  "cached_metrics_reproduced": true,
+  "outer_folds_match_baseline": true,
+  "nested_folds_disjoint": true,
+  "threshold_selection_reproduced": true,
+  "additional_heldout_inference": false,
+  "removal_comparison": {
+    "train": {
+      "l1_mean_raw_words_removed": 7.120463709677419,
+      "l1_mean_clean_tokens_removed": 8.139112903225806,
+      "universal": {
+        "rows": 1984,
+        "mean_raw_words_removed": 15.145665322580646,
+        "total_raw_words_removed": 30049,
+        "raw_word_fraction_removed": 0.018716392679871765,
+        "mean_clean_tokens_removed": 18.972278225806452,
+        "clean_token_fraction_removed": 0.03226702396045766,
+        "empty_after": 0
+      }
+    },
+    "test": {
+      "l1_mean_raw_words_removed": 7.334004024144869,
+      "l1_mean_clean_tokens_removed": 8.50503018108652,
+      "universal": {
+        "rows": 497,
+        "mean_raw_words_removed": 15.551307847082494,
+        "total_raw_words_removed": 7729,
+        "raw_word_fraction_removed": 0.018919931164644282,
+        "mean_clean_tokens_removed": 19.80482897384306,
+        "clean_token_fraction_removed": 0.03301668444462334,
+        "empty_after": 0
+      }
+    }
+  },
+  "investigation": {
+    "below_l1": true,
+    "test_macro_f1_delta_vs_l1": -0.03788514279215027,
+    "cv_macro_f1_delta_vs_l1": -0.04561481199950579,
+    "test_macro_f1_delta_vs_baseline": -0.2581755902796363,
+    "note": "Label-independent removal avoids L1 ground-truth conditioning; more domain vocabulary is removed. Quantified removal is in masking_audit. Deltas describe sensitivity, not causal proof."
+  },
+  "conclusion": "The lower score also occurs in training CV, consistent with a broader removal of useful domain evidence. L1 is label-conditioned and lacks the canonical lemma pass, so it is not a fair lower bound. No settings changed after inspecting test results. Proceed with the requested methodological promotion; remaining shortcuts and external validity are unresolved."
+}

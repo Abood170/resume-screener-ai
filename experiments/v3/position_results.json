@@ -1,0 +1,24 @@
+{
+  "scope": "training partition only",
+  "split_sha256": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+  "train_rows": 1984,
+  "positive_documents": 1750,
+  "own_label_occurrences": 14206,
+  "occurrences_first_20": 2159,
+  "occurrences_later": 12047,
+  "first_20_occurrence_fraction": 0.15197803744896524,
+  "later_occurrence_fraction": 0.8480219625510348,
+  "positive_docs_with_first_match_in_20": 1332,
+  "positive_docs_first_20_fraction": 0.7611428571428571,
+  "first_match_end_quantiles": {
+    "0.25": 1.0,
+    "0.5": 2.0,
+    "0.75": 13.0,
+    "0.9": 214.20000000000027
+  },
+  "k": 13,
+  "k_rule": "ceil 75th percentile of first own-label match end among positive TRAIN documents; fixed before candidate scoring",
+  "cap": 2,
+  "cap_rule": "Fixed two raw counts per label-containing feature; not tuned on test",
+  "tokenization": "Technical-preserving cleaned tokens; canonical category/variant forms; start positions below 20 are early. Not identical to the raw-text audit denominator."
+}

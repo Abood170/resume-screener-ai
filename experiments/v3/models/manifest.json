@@ -1,0 +1,44 @@
+{
+  "classes": [
+    "ACCOUNTANT",
+    "ADVOCATE",
+    "AGRICULTURE",
+    "APPAREL",
+    "ARTS",
+    "AUTOMOBILE",
+    "AVIATION",
+    "BANKING",
+    "BPO",
+    "BUSINESS-DEVELOPMENT",
+    "CHEF",
+    "CONSTRUCTION",
+    "CONSULTANT",
+    "DESIGNER",
+    "DIGITAL-MEDIA",
+    "ENGINEERING",
+    "FINANCE",
+    "FITNESS",
+    "HEALTHCARE",
+    "HR",
+    "INFORMATION-TECHNOLOGY",
+    "PUBLIC-RELATIONS",
+    "SALES",
+    "TEACHER"
+  ],
+  "family": "random_forest",
+  "policy": {
+    "t1": 0.4,
+    "t2": 0.1,
+    "answered": 1540,
+    "total": 1984,
+    "coverage": 0.7762096774193549,
+    "accuracy_on_answered": 0.788961038961039,
+    "correct_answered": 1215,
+    "wrong_answered": 325,
+    "utility": 0.4485887096774194
+  },
+  "artifacts": {
+    "calibrator.joblib": "b06351233ebf56f0742a3a99efcc477b52d386ff6a8c3163fab99ea5b644751a",
+    "pipeline.joblib": "f8a7abfb4addd661f6f73be6a0d4a6dfd4928a49b28f4195356f601eea808f58"
+  }
+}

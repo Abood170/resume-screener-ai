@@ -1,0 +1,14 @@
+{
+  "train": {
+    "rows": 1984,
+    "matched": 1748,
+    "changed": 1748,
+    "remaining_matches": 0
+  },
+  "test": {
+    "rows": 497,
+    "matched": 449,
+    "changed": 449,
+    "remaining_matches": 0
+  }
+}

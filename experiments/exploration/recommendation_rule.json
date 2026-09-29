@@ -1,0 +1,5 @@
+{
+  "timing": "Declared during training-only search, before finalist selection or any held-out evaluation",
+  "rule": "Require candidate CV mean to exceed fresh control mean by more than the larger of their fold standard deviations to recommend a change. If the combined view fails to exceed the best single view by more than the larger of their fold standard deviations, prefer that simpler single view, subject to the same control gate. This is a practical heuristic, not statistical significance.",
+  "test_role": "Reporting only; cannot change this recommendation or candidate ranking."
+}

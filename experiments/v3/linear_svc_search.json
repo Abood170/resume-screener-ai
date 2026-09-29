@@ -1,0 +1,24 @@
+{
+  "space": {
+    "tfidf__min_df": [
+      2,
+      3
+    ],
+    "tfidf__max_df": [
+      0.9,
+      0.95
+    ],
+    "tfidf__max_features": [
+      5000,
+      10000,
+      20000
+    ],
+    "classifier__C": [
+      0.3,
+      1.0,
+      3.0
+    ]
+  },
+  "elapsed_seconds": 199.35819099999935,
+  "trials": 8
+}

@@ -1,0 +1,20 @@
+{
+  "family": "random_forest",
+  "params": {},
+  "k": 13,
+  "cap": 2,
+  "trial_id": "V3-2",
+  "cv_gate_passed": true,
+  "policy": {
+    "t1": 0.4,
+    "t2": 0.1,
+    "answered": 1540,
+    "total": 1984,
+    "coverage": 0.7762096774193549,
+    "accuracy_on_answered": 0.788961038961039,
+    "correct_answered": 1215,
+    "wrong_answered": 325,
+    "utility": 0.4485887096774194
+  },
+  "protocol_sha256": "ceb6b72d16eba3e25bd2be0e1884ab7a04d7bd597e00840769d23abf32121453"
+}

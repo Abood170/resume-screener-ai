@@ -1,0 +1,290 @@
+{
+  "seed": 42,
+  "outer_cv": 5,
+  "inner_cv": 5,
+  "methods": [
+    "sigmoid",
+    "isotonic"
+  ],
+  "selection": "RF hyperparameters and sigmoid fixed from baseline; no model or calibration method selection.",
+  "material_degradation_tolerance": 0.01,
+  "threshold_t1_grid": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "threshold_t2_grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "threshold_selection": "Maximize pooled training OOF utility: correct +1, wrong -1, abstain 0; ties higher coverage then lower T1 then lower T2. Compare no numerical abstention (0,0), retaining short-input abstention. No target accuracy or coverage.",
+  "short_input_words": 50,
+  "uncertainty": "short_input (<50 words) OR top_probability<T1 OR top1_minus_top2<T2; reason priority short_input, low_confidence, small_margin",
+  "brier_definition": "mean(sum_class((probability - one_hot_label)^2)); range [0,2]",
+  "ece_definition": "Top-label ECE, 10 equal-width bins [lower,upper), final bin includes 1; weighted absolute bin accuracy-minus-mean-confidence; empty bins contribute zero.",
+  "data_hash": "76275a0d8e029e4fb46250296c0a25661bd44534ccdec034f4a19f42bbc753a0",
+  "split_hash": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+  "method": "sigmoid",
+  "preprocessing": "Universal fixed phrase mask, legacy cleaning, canonical lemma mask; no labels required.",
+  "variants": {
+    "ACCOUNTANT": [
+      "accountant",
+      "accountants",
+      "accounting"
+    ],
+    "ADVOCATE": [
+      "advocate",
+      "advocates",
+      "advocacy"
+    ],
+    "AGRICULTURE": [
+      "agriculture",
+      "agricultural"
+    ],
+    "APPAREL": [
+      "apparel"
+    ],
+    "ARTS": [
+      "arts",
+      "artist",
+      "artists",
+      "art"
+    ],
+    "AUTOMOBILE": [
+      "automobile",
+      "automobiles",
+      "automotive"
+    ],
+    "AVIATION": [
+      "aviation"
+    ],
+    "BANKING": [
+      "banking",
+      "banker",
+      "bankers"
+    ],
+    "BPO": [
+      "bpo",
+      "business process outsourcing"
+    ],
+    "BUSINESS-DEVELOPMENT": [
+      "business development"
+    ],
+    "CHEF": [
+      "chef",
+      "chefs"
+    ],
+    "CONSTRUCTION": [
+      "construction"
+    ],
+    "CONSULTANT": [
+      "consultant",
+      "consultants",
+      "consulting",
+      "consultancy"
+    ],
+    "DESIGNER": [
+      "designer",
+      "designers",
+      "design"
+    ],
+    "DIGITAL-MEDIA": [
+      "digital media"
+    ],
+    "ENGINEERING": [
+      "engineering",
+      "engineer",
+      "engineers"
+    ],
+    "FINANCE": [
+      "finance",
+      "financial"
+    ],
+    "FITNESS": [
+      "fitness"
+    ],
+    "HEALTHCARE": [
+      "healthcare",
+      "health care"
+    ],
+    "HR": [
+      "hr",
+      "human resources",
+      "human resource"
+    ],
+    "INFORMATION-TECHNOLOGY": [
+      "information technology"
+    ],
+    "PUBLIC-RELATIONS": [
+      "public relations"
+    ],
+    "SALES": [
+      "sales",
+      "salesperson"
+    ],
+    "TEACHER": [
+      "teacher",
+      "teachers",
+      "teaching"
+    ]
+  },
+  "raw_phrases": [
+    "accountant",
+    "accountants",
+    "accounting",
+    "advocacy",
+    "advocate",
+    "advocates",
+    "agricultural",
+    "agriculture",
+    "apparel",
+    "art",
+    "artist",
+    "artists",
+    "arts",
+    "automobile",
+    "automobiles",
+    "automotive",
+    "aviation",
+    "banker",
+    "bankers",
+    "banking",
+    "bpo",
+    "business development",
+    "business process outsourcing",
+    "chef",
+    "chefs",
+    "construction",
+    "consultancy",
+    "consultant",
+    "consultants",
+    "consulting",
+    "design",
+    "designer",
+    "designers",
+    "digital media",
+    "engineer",
+    "engineering",
+    "engineers",
+    "finance",
+    "financial",
+    "fitness",
+    "health care",
+    "healthcare",
+    "hr",
+    "human resource",
+    "human resources",
+    "information technology",
+    "public relations",
+    "sales",
+    "salesperson",
+    "teacher",
+    "teachers",
+    "teaching"
+  ],
+  "canonical_phrases": [
+    "accountant",
+    "accounting",
+    "advocacy",
+    "advocate",
+    "agricultural",
+    "agriculture",
+    "apparel",
+    "art",
+    "artist",
+    "automobile",
+    "automotive",
+    "aviation",
+    "banker",
+    "banking",
+    "bpo",
+    "business development",
+    "business process outsourcing",
+    "chef",
+    "construction",
+    "consultancy",
+    "consultant",
+    "consulting",
+    "design",
+    "designer",
+    "digital medium",
+    "engineer",
+    "engineering",
+    "finance",
+    "financial",
+    "fitness",
+    "health care",
+    "healthcare",
+    "hr",
+    "human resource",
+    "information technology",
+    "public relation",
+    "sale",
+    "salesperson",
+    "teacher",
+    "teaching"
+  ],
+  "preprocess_sha256": "deeed127392d6f07066070bdede55838ba346a37c0dd9e066ba25e93fb20e8d7",
+  "masking_sha256": "e0dabbd5da64e5631c59da90afd39f2a8216af3a596f23d23b52be92828750d0",
+  "baseline_checksums": {
+    "results.json": "1f8b162d77a35cd3d5826ffda2481a5826e0751d17135f175f400051093cf86c",
+    "models/calibrator.joblib": "c6d1b8410728402c6bb1dcdb884fd859435dcad73c6759150364b7dbedb950d5",
+    "models/model.joblib": "35dac25b0b8795379ce656dcd614b238ece63ee20ff03690432fbe36431b5468",
+    "models/vectorizer.joblib": "d10749ae719d3504730f520909ed457b12d661a26f193b09e1c4671566c22040",
+    "models/manifest.json": "c16539ffe9502b3d84abd109f99b79e9addb5984265c6a6d0a7225e588d7f02b",
+    "reports/split.json": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+    "reports/figures/confusion_matrix_random_forest.png": "29f90b4625e33553428fdd214a80c38ad3150440105de1b15e8bbb853b301ff1",
+    "data/provenance.json": "63ad669e1b9081b1260a8179c038633dccd3153a04240dd9adc435c62cfd47f1"
+  },
+  "rf_params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": 2,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "vectorizer_params": {
+    "analyzer": "word",
+    "binary": "False",
+    "decode_error": "strict",
+    "dtype": "<class 'numpy.float64'>",
+    "encoding": "utf-8",
+    "input": "content",
+    "lowercase": "False",
+    "max_df": "1.0",
+    "max_features": "5000",
+    "min_df": "1",
+    "ngram_range": "(1, 2)",
+    "norm": "l2",
+    "preprocessor": "<function clean_text_universal at 0x00000292F490F9C0>",
+    "smooth_idf": "True",
+    "stop_words": "None",
+    "strip_accents": "None",
+    "sublinear_tf": "False",
+    "token_pattern": "(?u)\\b\\w\\w+\\b",
+    "tokenizer": "None",
+    "use_idf": "True",
+    "vocabulary": "None"
+  },
+  "hypothesis": "Performance may lie between baseline and L1; not a guaranteed ordering. Universal removal is broader.",
+  "promotion": "Requested methodological change, not selected using held-out performance."
+}

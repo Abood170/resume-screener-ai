@@ -1,0 +1,13 @@
+{
+  "source_commit": "6cb19122ff9b6380a8ef46565144200f4b79dc3d",
+  "sha256": {
+    "results.json": "1f8b162d77a35cd3d5826ffda2481a5826e0751d17135f175f400051093cf86c",
+    "models/calibrator.joblib": "c6d1b8410728402c6bb1dcdb884fd859435dcad73c6759150364b7dbedb950d5",
+    "models/model.joblib": "35dac25b0b8795379ce656dcd614b238ece63ee20ff03690432fbe36431b5468",
+    "models/vectorizer.joblib": "d10749ae719d3504730f520909ed457b12d661a26f193b09e1c4671566c22040",
+    "models/manifest.json": "c16539ffe9502b3d84abd109f99b79e9addb5984265c6a6d0a7225e588d7f02b",
+    "reports/split.json": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+    "reports/figures/confusion_matrix_random_forest.png": "29f90b4625e33553428fdd214a80c38ad3150440105de1b15e8bbb853b301ff1",
+    "data/provenance.json": "63ad669e1b9081b1260a8179c038633dccd3153a04240dd9adc435c62cfd47f1"
+  }
+}

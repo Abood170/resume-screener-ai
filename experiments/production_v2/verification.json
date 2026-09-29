@@ -1,0 +1,20 @@
+{
+  "backend": {
+    "tests": 104,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 104
+  },
+  "frontend": {
+    "tests": 46,
+    "passed": 46,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "api_schema_unchanged": true,
+  "prior_tests_and_baseline_archives_unchanged": true,
+  "artifact_checksums_match": true,
+  "example_influential_terms_exclude_mask_dictionary": true
+}

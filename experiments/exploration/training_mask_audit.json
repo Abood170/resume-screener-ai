@@ -1,0 +1,8 @@
+{
+  "scope": "training partition only",
+  "rows": 1984,
+  "residual_dictionary_documents": 0,
+  "empty_documents": 0,
+  "test_access": false,
+  "limitation": "Checks only the explicit dictionary; correlated skills, source boilerplate and near duplicates may remain."
+}

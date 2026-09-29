@@ -1,0 +1,19 @@
+{
+  "method": "sigmoid",
+  "t1": 0.4,
+  "t2": 0.05,
+  "short_input_words": 50,
+  "training_policy": {
+    "t1": 0.4,
+    "t2": 0.05,
+    "answered": 1187,
+    "total": 1984,
+    "coverage": 0.5982862903225806,
+    "accuracy_on_answered": 0.6958719460825611,
+    "correct_answered": 826,
+    "wrong_answered": 361,
+    "utility": 0.234375
+  },
+  "protocol_sha256": "98f7a99911da682ac50c3227bb4261b7d21bb03dca661931fc07a0362103028a",
+  "selection_data": "Training nested OOF only; fixed historical utility/grid/tie-breaks"
+}

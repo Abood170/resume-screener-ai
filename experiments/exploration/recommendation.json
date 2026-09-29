@@ -1,0 +1,12 @@
+{
+  "preferred_candidate": "word_svc",
+  "recommendation": "Consider candidate after user review",
+  "reason": "Highest training CV mean.",
+  "cv_gain_over_control": 0.05722462958385888,
+  "variability_gate": 0.02383798966098138,
+  "gate_passed": true,
+  "selection_sha256": "b8971bb49eb35bf084087ed49a19cdb793b38b143bd56ec34851aff4856e71f1",
+  "rule_sha256": "765ca2b6945e0f17ff916777360ce4144984f54ab48bd32fe210181f37edfc26",
+  "test_access": false,
+  "auto_promote": false
+}

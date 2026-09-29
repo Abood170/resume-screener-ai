@@ -1,0 +1,73 @@
+{
+  "seed": 42,
+  "cv_folds": 5,
+  "finalists": 2,
+  "ideas": [
+    [
+      "E1",
+      "control_rf",
+      "Fresh production-style RF control",
+      "Recompute the existing universal-mask raw RF five-fold score on exactly the saved training rows; anchor all comparisons in fresh measurements."
+    ],
+    [
+      "E2",
+      "technical_rf",
+      "Universal mask plus technical tokens, RF",
+      "Keep RF and TF-IDF settings fixed; change only technical-preserving cleaning/tokenization. Expect useful punctuation-bearing skills to survive, but sparse training coverage may prevent improvement."
+    ],
+    [
+      "E3",
+      "balanced_rf",
+      "Technical RF with class balancing",
+      "Change only class_weight from E2 to balanced. Expect better minority recall; majority precision may decline."
+    ],
+    [
+      "E4",
+      "word_lr",
+      "Technical word/bigram balanced Logistic Regression",
+      "Sparse linear decision boundaries and broader vocabulary may generalize better than trees after label removal. Fixed C=1, sublinear TF, min_df=2, max_df=.95, max_features=20000."
+    ],
+    [
+      "E5",
+      "word_svc",
+      "Technical word/bigram balanced LinearSVC",
+      "Use the same features as E4 with a margin-based classifier, fixed C=1. May help overlapping classes; native probabilities are unavailable."
+    ],
+    [
+      "E6",
+      "char_svc",
+      "Masked character n-grams with balanced LinearSVC",
+      "Character 3-5 grams within word boundaries may capture spelling/morphology and technical forms despite sparse exact tokens. Input stays universally masked; character fragments can still encode source/template bias."
+    ],
+    [
+      "E7",
+      "word_char_svc",
+      "Combined masked word and character features",
+      "Complement explicit skill phrases with character robustness using equal-weight concatenated L2-normalized feature blocks. Extra complexity is worthwhile only if CV improves over both single views."
+    ]
+  ],
+  "selection": "Rank mean raw training CV macro F1 descending; alphabetical tie-break. Freeze top two BEFORE any test access. Calibrated CV will not rerank finalists.",
+  "calibration": "Fixed sigmoid, outer five-fold/inner three-fold training-only calibration; no calibration-method search. Inner three folds bound compute cost, fixed before scores.",
+  "thresholds": {
+    "t1": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "t2": [
+      0.05,
+      0.1,
+      0.15,
+      0.2
+    ]
+  },
+  "threshold_rule": "Maximize training OOF utility +1 correct, -1 wrong, 0 abstain. Ties higher coverage, lower T1, lower T2. Include (0,0). Short-input limit remains 50 whitespace words.",
+  "suspicious_score": 0.75,
+  "split_sha256": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+  "data_sha256": "76275a0d8e029e4fb46250296c0a25661bd44534ccdec034f4a19f42bbc753a0",
+  "feature_source_sha256": "ce1bd55d0908cbef562be13f8178fc6aad4885710318f401f4dd789e181aeda1",
+  "holdout_policy": "Only frozen finalists, one final evaluation each. Others receive null test metrics. No automatic promotion."
+}

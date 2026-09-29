@@ -1,0 +1,21 @@
+{
+  "id": "V3-17",
+  "stage": "randomized_search",
+  "family": "linear_svc",
+  "params": {
+    "tfidf__min_df": 3,
+    "tfidf__max_features": 5000,
+    "tfidf__max_df": 0.95,
+    "classifier__C": 3.0
+  },
+  "fold_scores": [
+    0.5475985823095074,
+    0.6122838975952943,
+    0.5784600986164294,
+    0.5816375601713911,
+    0.6140602684715176
+  ],
+  "mean": 0.586808081432828,
+  "std": 0.0245988082485922,
+  "seconds": 31.578964948654175
+}

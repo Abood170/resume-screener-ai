@@ -1,0 +1,177 @@
+{
+  "id": "E2",
+  "name": "technical_rf",
+  "title": "Universal mask plus technical tokens, RF",
+  "cv_mean": 0.4688096764210662,
+  "cv_std": 0.026459834704900573,
+  "cv_folds": [
+    0.4273800048582533,
+    0.5088784196635041,
+    0.47876254811772717,
+    0.4598919089930893,
+    0.46913550047275693
+  ],
+  "cv_seconds": 65.41872550000005,
+  "observation": "CV mean minus fresh control: 0.007331392246111901; improves the point estimate. Fold std is not a significance test. Technical-token preservation alone helped.",
+  "test": null,
+  "test_evaluations": 0,
+  "cv_per_class": {
+    "ACCOUNTANT": {
+      "precision": 0.5185185185185185,
+      "recall": 0.8936170212765957,
+      "f1-score": 0.65625,
+      "support": 94.0
+    },
+    "ADVOCATE": {
+      "precision": 0.39655172413793105,
+      "recall": 0.24468085106382978,
+      "f1-score": 0.3026315789473684,
+      "support": 94.0
+    },
+    "AGRICULTURE": {
+      "precision": 0.7272727272727273,
+      "recall": 0.16,
+      "f1-score": 0.26229508196721313,
+      "support": 50.0
+    },
+    "APPAREL": {
+      "precision": 0.5272727272727272,
+      "recall": 0.3717948717948718,
+      "f1-score": 0.43609022556390975,
+      "support": 78.0
+    },
+    "ARTS": {
+      "precision": 0.25,
+      "recall": 0.04878048780487805,
+      "f1-score": 0.08163265306122448,
+      "support": 82.0
+    },
+    "AUTOMOBILE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 29.0
+    },
+    "AVIATION": {
+      "precision": 0.6517857142857143,
+      "recall": 0.7849462365591398,
+      "f1-score": 0.7121951219512195,
+      "support": 93.0
+    },
+    "BANKING": {
+      "precision": 0.5339805825242718,
+      "recall": 0.5978260869565217,
+      "f1-score": 0.5641025641025641,
+      "support": 92.0
+    },
+    "BPO": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 18.0
+    },
+    "BUSINESS-DEVELOPMENT": {
+      "precision": 0.47619047619047616,
+      "recall": 0.5263157894736842,
+      "f1-score": 0.5,
+      "support": 95.0
+    },
+    "CHEF": {
+      "precision": 0.7064220183486238,
+      "recall": 0.8191489361702128,
+      "f1-score": 0.7586206896551724,
+      "support": 94.0
+    },
+    "CONSTRUCTION": {
+      "precision": 0.6702127659574468,
+      "recall": 0.7,
+      "f1-score": 0.6847826086956522,
+      "support": 90.0
+    },
+    "CONSULTANT": {
+      "precision": 0.34615384615384615,
+      "recall": 0.09782608695652174,
+      "f1-score": 0.15254237288135594,
+      "support": 92.0
+    },
+    "DESIGNER": {
+      "precision": 0.5769230769230769,
+      "recall": 0.5232558139534884,
+      "f1-score": 0.5487804878048781,
+      "support": 86.0
+    },
+    "DIGITAL-MEDIA": {
+      "precision": 0.6419753086419753,
+      "recall": 0.6753246753246753,
+      "f1-score": 0.6582278481012658,
+      "support": 77.0
+    },
+    "ENGINEERING": {
+      "precision": 0.5981308411214953,
+      "recall": 0.6808510638297872,
+      "f1-score": 0.6368159203980099,
+      "support": 94.0
+    },
+    "FINANCE": {
+      "precision": 0.5714285714285714,
+      "recall": 0.25806451612903225,
+      "f1-score": 0.35555555555555557,
+      "support": 93.0
+    },
+    "FITNESS": {
+      "precision": 0.7575757575757576,
+      "recall": 0.5376344086021505,
+      "f1-score": 0.6289308176100629,
+      "support": 93.0
+    },
+    "HEALTHCARE": {
+      "precision": 0.296,
+      "recall": 0.40217391304347827,
+      "f1-score": 0.34101382488479265,
+      "support": 92.0
+    },
+    "HR": {
+      "precision": 0.6111111111111112,
+      "recall": 0.875,
+      "f1-score": 0.719626168224299,
+      "support": 88.0
+    },
+    "INFORMATION-TECHNOLOGY": {
+      "precision": 0.4873417721518987,
+      "recall": 0.8020833333333334,
+      "f1-score": 0.6062992125984252,
+      "support": 96.0
+    },
+    "PUBLIC-RELATIONS": {
+      "precision": 0.5980392156862745,
+      "recall": 0.6853932584269663,
+      "f1-score": 0.6387434554973822,
+      "support": 89.0
+    },
+    "SALES": {
+      "precision": 0.3333333333333333,
+      "recall": 0.3978494623655914,
+      "f1-score": 0.3627450980392157,
+      "support": 93.0
+    },
+    "TEACHER": {
+      "precision": 0.5182481751824818,
+      "recall": 0.8658536585365854,
+      "f1-score": 0.6484018264840182,
+      "support": 82.0
+    },
+    "accuracy": 0.5393145161290323,
+    "macro avg": {
+      "precision": 0.4914361776590941,
+      "recall": 0.4978508529833894,
+      "f1-score": 0.46901179633431606,
+      "support": 1984.0
+    },
+    "weighted avg": {
+      "precision": 0.5196282652095018,
+      "recall": 0.5393145161290323,
+      "f1-score": 0.5053018668480956,
+      "support": 1984.0
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "purpose": "Diagnostic only, not model selection",
+  "seed": 42,
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "calibration_method_fixed": "sigmoid",
+  "mask": "Ground-truth own-category variants removed before vectorization in train and test",
+  "variants": {
+    "ACCOUNTANT": [
+      "accountant",
+      "accountants",
+      "accounting"
+    ],
+    "ADVOCATE": [
+      "advocate",
+      "advocates",
+      "advocacy"
+    ],
+    "AGRICULTURE": [
+      "agriculture",
+      "agricultural"
+    ],
+    "APPAREL": [
+      "apparel"
+    ],
+    "ARTS": [
+      "arts",
+      "artist",
+      "artists",
+      "art"
+    ],
+    "AUTOMOBILE": [
+      "automobile",
+      "automobiles",
+      "automotive"
+    ],
+    "AVIATION": [
+      "aviation"
+    ],
+    "BANKING": [
+      "banking",
+      "banker",
+      "bankers"
+    ],
+    "BPO": [
+      "bpo",
+      "business process outsourcing"
+    ],
+    "BUSINESS-DEVELOPMENT": [
+      "business development"
+    ],
+    "CHEF": [
+      "chef",
+      "chefs"
+    ],
+    "CONSTRUCTION": [
+      "construction"
+    ],
+    "CONSULTANT": [
+      "consultant",
+      "consultants",
+      "consulting",
+      "consultancy"
+    ],
+    "DESIGNER": [
+      "designer",
+      "designers",
+      "design"
+    ],
+    "DIGITAL-MEDIA": [
+      "digital media"
+    ],
+    "ENGINEERING": [
+      "engineering",
+      "engineer",
+      "engineers"
+    ],
+    "FINANCE": [
+      "finance",
+      "financial"
+    ],
+    "FITNESS": [
+      "fitness"
+    ],
+    "HEALTHCARE": [
+      "healthcare",
+      "health care"
+    ],
+    "HR": [
+      "hr",
+      "human resources",
+      "human resource"
+    ],
+    "INFORMATION-TECHNOLOGY": [
+      "information technology"
+    ],
+    "PUBLIC-RELATIONS": [
+      "public relations"
+    ],
+    "SALES": [
+      "sales",
+      "salesperson"
+    ],
+    "TEACHER": [
+      "teacher",
+      "teachers",
+      "teaching"
+    ]
+  },
+  "baseline_checksums": {
+    "results.json": "1f8b162d77a35cd3d5826ffda2481a5826e0751d17135f175f400051093cf86c",
+    "models/calibrator.joblib": "c6d1b8410728402c6bb1dcdb884fd859435dcad73c6759150364b7dbedb950d5",
+    "models/model.joblib": "35dac25b0b8795379ce656dcd614b238ece63ee20ff03690432fbe36431b5468",
+    "models/vectorizer.joblib": "d10749ae719d3504730f520909ed457b12d661a26f193b09e1c4671566c22040",
+    "models/manifest.json": "c16539ffe9502b3d84abd109f99b79e9addb5984265c6a6d0a7225e588d7f02b",
+    "reports/split.json": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+    "reports/figures/confusion_matrix_random_forest.png": "29f90b4625e33553428fdd214a80c38ad3150440105de1b15e8bbb853b301ff1",
+    "data/provenance.json": "63ad669e1b9081b1260a8179c038633dccd3153a04240dd9adc435c62cfd47f1"
+  },
+  "production_checksums_before": {
+    "models\\calibrator.joblib": "c6d1b8410728402c6bb1dcdb884fd859435dcad73c6759150364b7dbedb950d5",
+    "models\\manifest.json": "c16539ffe9502b3d84abd109f99b79e9addb5984265c6a6d0a7225e588d7f02b",
+    "models\\model.joblib": "35dac25b0b8795379ce656dcd614b238ece63ee20ff03690432fbe36431b5468",
+    "models\\vectorizer.joblib": "d10749ae719d3504730f520909ed457b12d661a26f193b09e1c4671566c22040",
+    "api\\main.py": "fc67bedfc3b4c4db13ecfe638ac1b56d819019a50c25629dbbe0984b7b7f4f4e",
+    "api\\uploads.py": "2d0e46dd35fe36e23e8750bc7c00c0cd2021a61a34a4004d7070520c324aa411",
+    "api\\__init__.py": "3a26dc2d1dc05238ec453b5374e0d18ec817bf7db39336b7694ca5fff9a6e3e1",
+    "tests\\test_api.py": "eb359395b1c1bae6849d20c7faca00b3ba4ac9eaadaf5af8b697a90de0c67f32",
+    "tests\\test_calibration.py": "37629b2cebff76f3d8539ef087e058d1480413e554f85b173ae1559343a656b2",
+    "tests\\test_file_upload.py": "17054745d6badd55b32700ed653e0f11d94ea5286935c3dd0ffabe9d248a1dff",
+    "tests\\test_predict.py": "a4dca234db042efd91454245dcab63882b26c077c12f97597faba3d9d08858f7",
+    "tests\\test_preprocess.py": "9ec206733c221dd799df9bd27bf7a611fdfd0cf544c71253b0a16bd7bbfd1731",
+    "experiments\\baseline_v1\\checksums.json": "79958d2c647456e17ca2c7657e9dfde304e75becd5914e775096df8a77615bd5",
+    "experiments\\baseline_v1\\NOTES.md": "f054adeb4e26ce4d2a492169c1351c1d67926d558496617732b68bb3ce6e383c",
+    "experiments\\baseline_v1\\results.json": "1f8b162d77a35cd3d5826ffda2481a5826e0751d17135f175f400051093cf86c",
+    "experiments\\baseline_v1\\data\\provenance.json": "63ad669e1b9081b1260a8179c038633dccd3153a04240dd9adc435c62cfd47f1",
+    "experiments\\baseline_v1\\models\\calibrator.joblib": "c6d1b8410728402c6bb1dcdb884fd859435dcad73c6759150364b7dbedb950d5",
+    "experiments\\baseline_v1\\models\\manifest.json": "c16539ffe9502b3d84abd109f99b79e9addb5984265c6a6d0a7225e588d7f02b",
+    "experiments\\baseline_v1\\models\\model.joblib": "35dac25b0b8795379ce656dcd614b238ece63ee20ff03690432fbe36431b5468",
+    "experiments\\baseline_v1\\models\\vectorizer.joblib": "d10749ae719d3504730f520909ed457b12d661a26f193b09e1c4671566c22040",
+    "experiments\\baseline_v1\\reports\\split.json": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+    "experiments\\baseline_v1\\reports\\figures\\confusion_matrix_random_forest.png": "29f90b4625e33553428fdd214a80c38ad3150440105de1b15e8bbb853b301ff1",
+    "results.json": "1f8b162d77a35cd3d5826ffda2481a5826e0751d17135f175f400051093cf86c",
+    "reports/split.json": "161a6a58de445b94e7cfa0b2b8191198ad814c38f4886a43ad594bc902fe45e3",
+    "src/train.py": "80e155e6a7f333fdd5a9691849a6428f4aa27f52bc829d256a41daac7f0ed019",
+    "src/preprocess.py": "b1d37a5126b3bb01c225d7f28e8040e0fe1e8f2eae4efd86e1c855c15cb09ca6",
+    "src/predict.py": "5f91cc5bc2dbdab50a5ffc9c1ef64975cb01865c8fe8cc94e22bebcfa28761e9"
+  },
+  "hyperparameters": {
+    "memory": "None",
+    "steps": "[('tfidf', TfidfVectorizer(lowercase=False, max_features=5000, ngram_range=(1, 2),\n                preprocessor=<function clean_text at 0x000002CC96153C40>)), ('classifier', RandomForestClassifier(n_estimators=200, n_jobs=2, random_state=42))]",
+    "transform_input": "None",
+    "verbose": "False",
+    "tfidf": "TfidfVectorizer(lowercase=False, max_features=5000, ngram_range=(1, 2),\n                preprocessor=<function clean_text at 0x000002CC96153C40>)",
+    "classifier": "RandomForestClassifier(n_estimators=200, n_jobs=2, random_state=42)",
+    "tfidf__analyzer": "word",
+    "tfidf__binary": "False",
+    "tfidf__decode_error": "strict",
+    "tfidf__dtype": "<class 'numpy.float64'>",
+    "tfidf__encoding": "utf-8",
+    "tfidf__input": "content",
+    "tfidf__lowercase": "False",
+    "tfidf__max_df": "1.0",
+    "tfidf__max_features": "5000",
+    "tfidf__min_df": "1",
+    "tfidf__ngram_range": "(1, 2)",
+    "tfidf__norm": "l2",
+    "tfidf__preprocessor": "<function clean_text at 0x000002CC96153C40>",
+    "tfidf__smooth_idf": "True",
+    "tfidf__stop_words": "None",
+    "tfidf__strip_accents": "None",
+    "tfidf__sublinear_tf": "False",
+    "tfidf__token_pattern": "(?u)\\b\\w\\w+\\b",
+    "tfidf__tokenizer": "None",
+    "tfidf__use_idf": "True",
+    "tfidf__vocabulary": "None",
+    "classifier__bootstrap": "True",
+    "classifier__ccp_alpha": "0.0",
+    "classifier__class_weight": "None",
+    "classifier__criterion": "gini",
+    "classifier__max_depth": "None",
+    "classifier__max_features": "sqrt",
+    "classifier__max_leaf_nodes": "None",
+    "classifier__max_samples": "None",
+    "classifier__min_impurity_decrease": "0.0",
+    "classifier__min_samples_leaf": "1",
+    "classifier__min_samples_split": "2",
+    "classifier__min_weight_fraction_leaf": "0.0",
+    "classifier__monotonic_cst": "None",
+    "classifier__n_estimators": "200",
+    "classifier__n_jobs": "2",
+    "classifier__oob_score": "False",
+    "classifier__random_state": "42",
+    "classifier__verbose": "0",
+    "classifier__warm_start": "False"
+  },
+  "policy": "No thresholds tuned; all-row classification before abstention. No permanent adoption decision."
+}

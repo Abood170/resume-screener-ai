@@ -1,0 +1,23 @@
+{
+  "fixed_demo_technical_features_in_selected_vocabulary": {
+    "java": true,
+    "spring": true,
+    "spring boot": false,
+    "c++": true,
+    "c#": true,
+    ".net": true,
+    "node.js": false,
+    "ci/cd": false,
+    "sql": true,
+    "database": true,
+    "docker": false,
+    "kafka": false,
+    "junit": false,
+    "oauth": false,
+    "jwt": false,
+    "postgresql": false,
+    "redis": false
+  },
+  "all_requested_shapes_survive_cleaning": true,
+  "interpretation": "Token preservation does not guarantee inclusion after min_df and max_features filtering. The fixed Java demo failed the intended IT headline and correctly triggered low-confidence abstention; no sample or model settings were changed."
+}

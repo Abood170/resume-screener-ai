@@ -1,0 +1,7 @@
+{
+  "scope": "training only",
+  "own_label_present_after_prefix_mask": 1739,
+  "train_rows": 1984,
+  "fraction": 0.8765120967741935,
+  "interpretation": "Frequency capping retains at least one occurrence, so it cannot remove the own-label presence shortcut."
+}

@@ -1,0 +1,462 @@
+{
+  "train": {
+    "overall": {
+      "rows": 1984,
+      "mean_raw_words_removed": 15.145665322580646,
+      "total_raw_words_removed": 30049,
+      "raw_word_fraction_removed": 0.018716392679871765,
+      "mean_clean_tokens_removed": 18.972278225806452,
+      "clean_token_fraction_removed": 0.03226702396045766,
+      "empty_after": 0
+    },
+    "per_class": {
+      "ACCOUNTANT": {
+        "rows": 94,
+        "mean_raw_words_removed": 27.861702127659573,
+        "total_raw_words_removed": 2619,
+        "raw_word_fraction_removed": 0.034558289899056543,
+        "mean_clean_tokens_removed": 33.223404255319146,
+        "clean_token_fraction_removed": 0.056208491567826355,
+        "empty_after": 0
+      },
+      "ADVOCATE": {
+        "rows": 94,
+        "mean_raw_words_removed": 10.127659574468085,
+        "total_raw_words_removed": 952,
+        "raw_word_fraction_removed": 0.0114458845312237,
+        "mean_clean_tokens_removed": 12.595744680851064,
+        "clean_token_fraction_removed": 0.01973004499250125,
+        "empty_after": 0
+      },
+      "AGRICULTURE": {
+        "rows": 50,
+        "mean_raw_words_removed": 9.12,
+        "total_raw_words_removed": 456,
+        "raw_word_fraction_removed": 0.010116023692792334,
+        "mean_clean_tokens_removed": 12.04,
+        "clean_token_fraction_removed": 0.01868404717566729,
+        "empty_after": 0
+      },
+      "APPAREL": {
+        "rows": 78,
+        "mean_raw_words_removed": 11.85897435897436,
+        "total_raw_words_removed": 925,
+        "raw_word_fraction_removed": 0.015818184927407358,
+        "mean_clean_tokens_removed": 15.782051282051283,
+        "clean_token_fraction_removed": 0.029018646425119633,
+        "empty_after": 0
+      },
+      "ARTS": {
+        "rows": 82,
+        "mean_raw_words_removed": 13.768292682926829,
+        "total_raw_words_removed": 1129,
+        "raw_word_fraction_removed": 0.01752071758900028,
+        "mean_clean_tokens_removed": 17.695121951219512,
+        "clean_token_fraction_removed": 0.03128166433114153,
+        "empty_after": 0
+      },
+      "AUTOMOBILE": {
+        "rows": 29,
+        "mean_raw_words_removed": 9.931034482758621,
+        "total_raw_words_removed": 288,
+        "raw_word_fraction_removed": 0.011716842961757526,
+        "mean_clean_tokens_removed": 13.275862068965518,
+        "clean_token_fraction_removed": 0.021456835534748926,
+        "empty_after": 0
+      },
+      "AVIATION": {
+        "rows": 93,
+        "mean_raw_words_removed": 9.118279569892474,
+        "total_raw_words_removed": 848,
+        "raw_word_fraction_removed": 0.01170026353187908,
+        "mean_clean_tokens_removed": 11.10752688172043,
+        "clean_token_fraction_removed": 0.01963094582010984,
+        "empty_after": 0
+      },
+      "BANKING": {
+        "rows": 92,
+        "mean_raw_words_removed": 16.195652173913043,
+        "total_raw_words_removed": 1490,
+        "raw_word_fraction_removed": 0.020248967166775385,
+        "mean_clean_tokens_removed": 20.869565217391305,
+        "clean_token_fraction_removed": 0.035770176615247035,
+        "empty_after": 0
+      },
+      "BPO": {
+        "rows": 18,
+        "mean_raw_words_removed": 11.38888888888889,
+        "total_raw_words_removed": 205,
+        "raw_word_fraction_removed": 0.011608811370972309,
+        "mean_clean_tokens_removed": 15.166666666666666,
+        "clean_token_fraction_removed": 0.021848739495798318,
+        "empty_after": 0
+      },
+      "BUSINESS-DEVELOPMENT": {
+        "rows": 95,
+        "mean_raw_words_removed": 23.978947368421053,
+        "total_raw_words_removed": 2278,
+        "raw_word_fraction_removed": 0.03078087207966814,
+        "mean_clean_tokens_removed": 28.91578947368421,
+        "clean_token_fraction_removed": 0.050964749536178106,
+        "empty_after": 0
+      },
+      "CHEF": {
+        "rows": 94,
+        "mean_raw_words_removed": 10.691489361702128,
+        "total_raw_words_removed": 1005,
+        "raw_word_fraction_removed": 0.01395019571916382,
+        "mean_clean_tokens_removed": 13.77659574468085,
+        "clean_token_fraction_removed": 0.025253510140405618,
+        "empty_after": 0
+      },
+      "CONSTRUCTION": {
+        "rows": 90,
+        "mean_raw_words_removed": 18.155555555555555,
+        "total_raw_words_removed": 1634,
+        "raw_word_fraction_removed": 0.021159499112958575,
+        "mean_clean_tokens_removed": 23.366666666666667,
+        "clean_token_fraction_removed": 0.03750200617008756,
+        "empty_after": 0
+      },
+      "CONSULTANT": {
+        "rows": 92,
+        "mean_raw_words_removed": 13.043478260869565,
+        "total_raw_words_removed": 1200,
+        "raw_word_fraction_removed": 0.014535587964533166,
+        "mean_clean_tokens_removed": 17.57608695652174,
+        "clean_token_fraction_removed": 0.026653699704946677,
+        "empty_after": 0
+      },
+      "DESIGNER": {
+        "rows": 86,
+        "mean_raw_words_removed": 18.41860465116279,
+        "total_raw_words_removed": 1584,
+        "raw_word_fraction_removed": 0.025393975343475962,
+        "mean_clean_tokens_removed": 23.941860465116278,
+        "clean_token_fraction_removed": 0.0458983504235399,
+        "empty_after": 0
+      },
+      "DIGITAL-MEDIA": {
+        "rows": 77,
+        "mean_raw_words_removed": 9.285714285714286,
+        "total_raw_words_removed": 715,
+        "raw_word_fraction_removed": 0.011903374565069007,
+        "mean_clean_tokens_removed": 13.090909090909092,
+        "clean_token_fraction_removed": 0.022943506168343425,
+        "empty_after": 0
+      },
+      "ENGINEERING": {
+        "rows": 94,
+        "mean_raw_words_removed": 15.170212765957446,
+        "total_raw_words_removed": 1426,
+        "raw_word_fraction_removed": 0.01806297975831581,
+        "mean_clean_tokens_removed": 19.29787234042553,
+        "clean_token_fraction_removed": 0.031079205715558448,
+        "empty_after": 0
+      },
+      "FINANCE": {
+        "rows": 93,
+        "mean_raw_words_removed": 23.333333333333332,
+        "total_raw_words_removed": 2170,
+        "raw_word_fraction_removed": 0.030079148358122063,
+        "mean_clean_tokens_removed": 28.344086021505376,
+        "clean_token_fraction_removed": 0.05050776010730025,
+        "empty_after": 0
+      },
+      "FITNESS": {
+        "rows": 93,
+        "mean_raw_words_removed": 12.03225806451613,
+        "total_raw_words_removed": 1119,
+        "raw_word_fraction_removed": 0.01708866558748969,
+        "mean_clean_tokens_removed": 15.129032258064516,
+        "clean_token_fraction_removed": 0.029768957345971563,
+        "empty_after": 0
+      },
+      "HEALTHCARE": {
+        "rows": 92,
+        "mean_raw_words_removed": 13.554347826086957,
+        "total_raw_words_removed": 1247,
+        "raw_word_fraction_removed": 0.015434505464582327,
+        "mean_clean_tokens_removed": 16.380434782608695,
+        "clean_token_fraction_removed": 0.02535927035304412,
+        "empty_after": 0
+      },
+      "HR": {
+        "rows": 88,
+        "mean_raw_words_removed": 22.704545454545453,
+        "total_raw_words_removed": 1998,
+        "raw_word_fraction_removed": 0.025953782003819027,
+        "mean_clean_tokens_removed": 26.613636363636363,
+        "clean_token_fraction_removed": 0.041120904589668855,
+        "empty_after": 0
+      },
+      "INFORMATION-TECHNOLOGY": {
+        "rows": 96,
+        "mean_raw_words_removed": 12.229166666666666,
+        "total_raw_words_removed": 1174,
+        "raw_word_fraction_removed": 0.01305430769915047,
+        "mean_clean_tokens_removed": 15.229166666666666,
+        "clean_token_fraction_removed": 0.02225706760850701,
+        "empty_after": 0
+      },
+      "PUBLIC-RELATIONS": {
+        "rows": 89,
+        "mean_raw_words_removed": 15.719101123595506,
+        "total_raw_words_removed": 1399,
+        "raw_word_fraction_removed": 0.019043081739603892,
+        "mean_clean_tokens_removed": 19.696629213483146,
+        "clean_token_fraction_removed": 0.03256850905712959,
+        "empty_after": 0
+      },
+      "SALES": {
+        "rows": 93,
+        "mean_raw_words_removed": 12.559139784946236,
+        "total_raw_words_removed": 1168,
+        "raw_word_fraction_removed": 0.018452982810920122,
+        "mean_clean_tokens_removed": 15.451612903225806,
+        "clean_token_fraction_removed": 0.03182371830362086,
+        "empty_after": 0
+      },
+      "TEACHER": {
+        "rows": 82,
+        "mean_raw_words_removed": 12.439024390243903,
+        "total_raw_words_removed": 1020,
+        "raw_word_fraction_removed": 0.016741071428571428,
+        "mean_clean_tokens_removed": 15.268292682926829,
+        "clean_token_fraction_removed": 0.028696509202594603,
+        "empty_after": 0
+      }
+    }
+  },
+  "test": {
+    "overall": {
+      "rows": 497,
+      "mean_raw_words_removed": 15.551307847082494,
+      "total_raw_words_removed": 7729,
+      "raw_word_fraction_removed": 0.018919931164644282,
+      "mean_clean_tokens_removed": 19.80482897384306,
+      "clean_token_fraction_removed": 0.03301668444462334,
+      "empty_after": 0
+    },
+    "per_class": {
+      "ACCOUNTANT": {
+        "rows": 24,
+        "mean_raw_words_removed": 22.083333333333332,
+        "total_raw_words_removed": 530,
+        "raw_word_fraction_removed": 0.028470133218736572,
+        "mean_clean_tokens_removed": 26.875,
+        "clean_token_fraction_removed": 0.046678245766391666,
+        "empty_after": 0
+      },
+      "ADVOCATE": {
+        "rows": 24,
+        "mean_raw_words_removed": 10.5,
+        "total_raw_words_removed": 252,
+        "raw_word_fraction_removed": 0.014868133813204319,
+        "mean_clean_tokens_removed": 13.375,
+        "clean_token_fraction_removed": 0.025704676489429854,
+        "empty_after": 0
+      },
+      "AGRICULTURE": {
+        "rows": 13,
+        "mean_raw_words_removed": 5.538461538461538,
+        "total_raw_words_removed": 72,
+        "raw_word_fraction_removed": 0.008118164392828954,
+        "mean_clean_tokens_removed": 8.0,
+        "clean_token_fraction_removed": 0.01616412806963009,
+        "empty_after": 0
+      },
+      "APPAREL": {
+        "rows": 19,
+        "mean_raw_words_removed": 18.63157894736842,
+        "total_raw_words_removed": 354,
+        "raw_word_fraction_removed": 0.02052649889829526,
+        "mean_clean_tokens_removed": 24.31578947368421,
+        "clean_token_fraction_removed": 0.037037037037037035,
+        "empty_after": 0
+      },
+      "ARTS": {
+        "rows": 21,
+        "mean_raw_words_removed": 13.380952380952381,
+        "total_raw_words_removed": 281,
+        "raw_word_fraction_removed": 0.018269293283921722,
+        "mean_clean_tokens_removed": 16.761904761904763,
+        "clean_token_fraction_removed": 0.0315695067264574,
+        "empty_after": 0
+      },
+      "AUTOMOBILE": {
+        "rows": 7,
+        "mean_raw_words_removed": 4.714285714285714,
+        "total_raw_words_removed": 33,
+        "raw_word_fraction_removed": 0.007308970099667774,
+        "mean_clean_tokens_removed": 5.428571428571429,
+        "clean_token_fraction_removed": 0.011299435028248588,
+        "empty_after": 0
+      },
+      "AVIATION": {
+        "rows": 23,
+        "mean_raw_words_removed": 9.043478260869565,
+        "total_raw_words_removed": 208,
+        "raw_word_fraction_removed": 0.01071502163610138,
+        "mean_clean_tokens_removed": 10.565217391304348,
+        "clean_token_fraction_removed": 0.017138021016996966,
+        "empty_after": 0
+      },
+      "BANKING": {
+        "rows": 23,
+        "mean_raw_words_removed": 16.565217391304348,
+        "total_raw_words_removed": 381,
+        "raw_word_fraction_removed": 0.020246572430651505,
+        "mean_clean_tokens_removed": 21.869565217391305,
+        "clean_token_fraction_removed": 0.03632555788257384,
+        "empty_after": 0
+      },
+      "BPO": {
+        "rows": 4,
+        "mean_raw_words_removed": 11.75,
+        "total_raw_words_removed": 47,
+        "raw_word_fraction_removed": 0.012453630100688924,
+        "mean_clean_tokens_removed": 14.5,
+        "clean_token_fraction_removed": 0.021014492753623187,
+        "empty_after": 0
+      },
+      "BUSINESS-DEVELOPMENT": {
+        "rows": 24,
+        "mean_raw_words_removed": 22.916666666666668,
+        "total_raw_words_removed": 550,
+        "raw_word_fraction_removed": 0.028953463887134132,
+        "mean_clean_tokens_removed": 29.458333333333332,
+        "clean_token_fraction_removed": 0.050622941429185164,
+        "empty_after": 0
+      },
+      "CHEF": {
+        "rows": 24,
+        "mean_raw_words_removed": 9.833333333333334,
+        "total_raw_words_removed": 236,
+        "raw_word_fraction_removed": 0.010724835264712565,
+        "mean_clean_tokens_removed": 12.958333333333334,
+        "clean_token_fraction_removed": 0.01987601457148335,
+        "empty_after": 0
+      },
+      "CONSTRUCTION": {
+        "rows": 22,
+        "mean_raw_words_removed": 15.909090909090908,
+        "total_raw_words_removed": 350,
+        "raw_word_fraction_removed": 0.019145560964936272,
+        "mean_clean_tokens_removed": 19.90909090909091,
+        "clean_token_fraction_removed": 0.033866852238459755,
+        "empty_after": 0
+      },
+      "CONSULTANT": {
+        "rows": 23,
+        "mean_raw_words_removed": 16.695652173913043,
+        "total_raw_words_removed": 384,
+        "raw_word_fraction_removed": 0.020634067705534657,
+        "mean_clean_tokens_removed": 22.652173913043477,
+        "clean_token_fraction_removed": 0.03753872757403271,
+        "empty_after": 0
+      },
+      "DESIGNER": {
+        "rows": 21,
+        "mean_raw_words_removed": 21.38095238095238,
+        "total_raw_words_removed": 449,
+        "raw_word_fraction_removed": 0.02760528742699047,
+        "mean_clean_tokens_removed": 31.19047619047619,
+        "clean_token_fraction_removed": 0.05488520194402547,
+        "empty_after": 0
+      },
+      "DIGITAL-MEDIA": {
+        "rows": 19,
+        "mean_raw_words_removed": 13.31578947368421,
+        "total_raw_words_removed": 253,
+        "raw_word_fraction_removed": 0.015824368276207156,
+        "mean_clean_tokens_removed": 17.36842105263158,
+        "clean_token_fraction_removed": 0.028404200378722672,
+        "empty_after": 0
+      },
+      "ENGINEERING": {
+        "rows": 24,
+        "mean_raw_words_removed": 12.375,
+        "total_raw_words_removed": 297,
+        "raw_word_fraction_removed": 0.014935881317576062,
+        "mean_clean_tokens_removed": 15.333333333333334,
+        "clean_token_fraction_removed": 0.025222755311857435,
+        "empty_after": 0
+      },
+      "FINANCE": {
+        "rows": 24,
+        "mean_raw_words_removed": 29.541666666666668,
+        "total_raw_words_removed": 709,
+        "raw_word_fraction_removed": 0.030832789736899326,
+        "mean_clean_tokens_removed": 35.916666666666664,
+        "clean_token_fraction_removed": 0.051505736137667305,
+        "empty_after": 0
+      },
+      "FITNESS": {
+        "rows": 24,
+        "mean_raw_words_removed": 14.833333333333334,
+        "total_raw_words_removed": 356,
+        "raw_word_fraction_removed": 0.018626066028357664,
+        "mean_clean_tokens_removed": 19.0,
+        "clean_token_fraction_removed": 0.03284119553474973,
+        "empty_after": 0
+      },
+      "HEALTHCARE": {
+        "rows": 23,
+        "mean_raw_words_removed": 12.565217391304348,
+        "total_raw_words_removed": 289,
+        "raw_word_fraction_removed": 0.01402163893066809,
+        "mean_clean_tokens_removed": 15.478260869565217,
+        "clean_token_fraction_removed": 0.02345191040843215,
+        "empty_after": 0
+      },
+      "HR": {
+        "rows": 22,
+        "mean_raw_words_removed": 19.09090909090909,
+        "total_raw_words_removed": 420,
+        "raw_word_fraction_removed": 0.024812429845808472,
+        "mean_clean_tokens_removed": 22.227272727272727,
+        "clean_token_fraction_removed": 0.03900143563566757,
+        "empty_after": 0
+      },
+      "INFORMATION-TECHNOLOGY": {
+        "rows": 24,
+        "mean_raw_words_removed": 14.791666666666666,
+        "total_raw_words_removed": 355,
+        "raw_word_fraction_removed": 0.016699595446420173,
+        "mean_clean_tokens_removed": 19.541666666666668,
+        "clean_token_fraction_removed": 0.029004329004329005,
+        "empty_after": 0
+      },
+      "PUBLIC-RELATIONS": {
+        "rows": 22,
+        "mean_raw_words_removed": 17.954545454545453,
+        "total_raw_words_removed": 395,
+        "raw_word_fraction_removed": 0.015644183928076358,
+        "mean_clean_tokens_removed": 22.136363636363637,
+        "clean_token_fraction_removed": 0.02688528210224136,
+        "empty_after": 0
+      },
+      "SALES": {
+        "rows": 23,
+        "mean_raw_words_removed": 13.73913043478261,
+        "total_raw_words_removed": 316,
+        "raw_word_fraction_removed": 0.01890291320212957,
+        "mean_clean_tokens_removed": 17.782608695652176,
+        "clean_token_fraction_removed": 0.03461115342303461,
+        "empty_after": 0
+      },
+      "TEACHER": {
+        "rows": 20,
+        "mean_raw_words_removed": 10.6,
+        "total_raw_words_removed": 212,
+        "raw_word_fraction_removed": 0.01762114537444934,
+        "mean_clean_tokens_removed": 12.95,
+        "clean_token_fraction_removed": 0.030109276912345967,
+        "empty_after": 0
+      }
+    }
+  },
+  "masked_exact_cross_split_overlap": 0,
+  "forbidden_features": []
+}

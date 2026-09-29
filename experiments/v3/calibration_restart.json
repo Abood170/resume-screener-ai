@@ -1,0 +1,5 @@
+{
+  "reason": "Response adapter lacked sklearn-required predict method; fixed interface before test evaluation. Search results reused unchanged.",
+  "held_out_evaluation_before_fix": false,
+  "new_dependencies": false
+}

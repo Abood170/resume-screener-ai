@@ -1,0 +1,57 @@
+{
+  "status_code": 200,
+  "response": {
+    "predicted_category": "SALES",
+    "confidence": 0.115,
+    "calibrated_predicted_category": "CONSULTANT",
+    "calibrated_confidence": 0.26396082782574387,
+    "calibrated_top_predictions": [
+      {
+        "category": "CONSULTANT",
+        "probability": 0.26396082782574387
+      },
+      {
+        "category": "SALES",
+        "probability": 0.15210478749713724
+      },
+      {
+        "category": "ARTS",
+        "probability": 0.0800658479839846
+      }
+    ],
+    "is_uncertain": true,
+    "uncertainty_reason": "low_confidence",
+    "top_predictions": [
+      {
+        "category": "SALES",
+        "probability": 0.115
+      },
+      {
+        "category": "CONSULTANT",
+        "probability": 0.105
+      },
+      {
+        "category": "INFORMATION-TECHNOLOGY",
+        "probability": 0.1
+      }
+    ],
+    "top_terms": [
+      "service",
+      "server",
+      "wrote",
+      "building",
+      "sql",
+      "database",
+      "using",
+      "maintained"
+    ],
+    "text_stats": {
+      "word_count": 85,
+      "short_input": false
+    },
+    "source": "text",
+    "text_preview": null
+  },
+  "input_source": "Fixed authored backend/Java developer demo; not a dataset record; content not logged",
+  "target_rank": null
+}

@@ -1,0 +1,178 @@
+{
+  "log_loss": 1.491123066605034,
+  "brier_score": 0.5755263226351806,
+  "ece_10_bins": 0.0826720220875122,
+  "accuracy": 0.5633802816901409,
+  "macro_f1": 0.5191586134385697,
+  "per_class": {
+    "ACCOUNTANT": {
+      "precision": 0.5483870967741935,
+      "recall": 0.7083333333333334,
+      "f1-score": 0.6181818181818182,
+      "support": 24.0
+    },
+    "ADVOCATE": {
+      "precision": 0.36666666666666664,
+      "recall": 0.4583333333333333,
+      "f1-score": 0.4074074074074074,
+      "support": 24.0
+    },
+    "AGRICULTURE": {
+      "precision": 0.5714285714285714,
+      "recall": 0.3076923076923077,
+      "f1-score": 0.4,
+      "support": 13.0
+    },
+    "APPAREL": {
+      "precision": 0.3125,
+      "recall": 0.2631578947368421,
+      "f1-score": 0.2857142857142857,
+      "support": 19.0
+    },
+    "ARTS": {
+      "precision": 0.3888888888888889,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.358974358974359,
+      "support": 21.0
+    },
+    "AUTOMOBILE": {
+      "precision": 1.0,
+      "recall": 0.14285714285714285,
+      "f1-score": 0.25,
+      "support": 7.0
+    },
+    "AVIATION": {
+      "precision": 0.8095238095238095,
+      "recall": 0.7391304347826086,
+      "f1-score": 0.7727272727272727,
+      "support": 23.0
+    },
+    "BANKING": {
+      "precision": 0.64,
+      "recall": 0.6956521739130435,
+      "f1-score": 0.6666666666666666,
+      "support": 23.0
+    },
+    "BPO": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "BUSINESS-DEVELOPMENT": {
+      "precision": 0.41379310344827586,
+      "recall": 0.5,
+      "f1-score": 0.4528301886792453,
+      "support": 24.0
+    },
+    "CHEF": {
+      "precision": 0.8333333333333334,
+      "recall": 0.625,
+      "f1-score": 0.7142857142857143,
+      "support": 24.0
+    },
+    "CONSTRUCTION": {
+      "precision": 0.6086956521739131,
+      "recall": 0.6363636363636364,
+      "f1-score": 0.6222222222222222,
+      "support": 22.0
+    },
+    "CONSULTANT": {
+      "precision": 0.25,
+      "recall": 0.08695652173913043,
+      "f1-score": 0.12903225806451613,
+      "support": 23.0
+    },
+    "DESIGNER": {
+      "precision": 0.8235294117647058,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.7368421052631579,
+      "support": 21.0
+    },
+    "DIGITAL-MEDIA": {
+      "precision": 0.5789473684210527,
+      "recall": 0.5789473684210527,
+      "f1-score": 0.5789473684210527,
+      "support": 19.0
+    },
+    "ENGINEERING": {
+      "precision": 0.7,
+      "recall": 0.5833333333333334,
+      "f1-score": 0.6363636363636364,
+      "support": 24.0
+    },
+    "FINANCE": {
+      "precision": 0.5454545454545454,
+      "recall": 0.5,
+      "f1-score": 0.5217391304347826,
+      "support": 24.0
+    },
+    "FITNESS": {
+      "precision": 0.6428571428571429,
+      "recall": 0.75,
+      "f1-score": 0.6923076923076923,
+      "support": 24.0
+    },
+    "HEALTHCARE": {
+      "precision": 0.5185185185185185,
+      "recall": 0.6086956521739131,
+      "f1-score": 0.56,
+      "support": 23.0
+    },
+    "HR": {
+      "precision": 0.8,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.851063829787234,
+      "support": 22.0
+    },
+    "INFORMATION-TECHNOLOGY": {
+      "precision": 0.6470588235294118,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.7586206896551724,
+      "support": 24.0
+    },
+    "PUBLIC-RELATIONS": {
+      "precision": 0.5,
+      "recall": 0.6363636363636364,
+      "f1-score": 0.56,
+      "support": 22.0
+    },
+    "SALES": {
+      "precision": 0.3333333333333333,
+      "recall": 0.34782608695652173,
+      "f1-score": 0.3404255319148936,
+      "support": 23.0
+    },
+    "TEACHER": {
+      "precision": 0.5,
+      "recall": 0.6,
+      "f1-score": 0.5454545454545454,
+      "support": 20.0
+    },
+    "accuracy": 0.5633802816901409,
+    "macro avg": {
+      "precision": 0.5555381777548484,
+      "recall": 0.5247666846565587,
+      "f1-score": 0.5191586134385697,
+      "support": 497.0
+    },
+    "weighted avg": {
+      "precision": 0.5638652261394143,
+      "recall": 0.5633802816901409,
+      "f1-score": 0.5514232629014416,
+      "support": 497.0
+    }
+  },
+  "policy": {
+    "t1": 0.4,
+    "t2": 0.05,
+    "answered": 311,
+    "total": 497,
+    "coverage": 0.6257545271629779,
+    "accuracy_on_answered": 0.7106109324758842,
+    "correct_answered": 221,
+    "wrong_answered": 90,
+    "utility": 0.2635814889336016
+  },
+  "evaluations": 1
+}

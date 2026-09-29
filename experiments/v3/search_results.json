@@ -1,0 +1,477 @@
+{
+  "trials": [
+    {
+      "id": "V3-1",
+      "stage": "family_screen",
+      "family": "logistic_regression",
+      "params": {},
+      "fold_scores": [
+        0.5176091213570805,
+        0.5402629022271285,
+        0.5481313936021119,
+        0.5236805750500211,
+        0.5602023009100771
+      ],
+      "mean": 0.5379772586292838,
+      "std": 0.01563035063836193,
+      "seconds": 48.80190560000119,
+      "incumbent_mean_before": 0.4614782841749543,
+      "incumbent_std_before": 0.02383798966098138,
+      "kept_in_search": true
+    },
+    {
+      "id": "V3-2",
+      "stage": "family_screen",
+      "family": "random_forest",
+      "params": {},
+      "fold_scores": [
+        0.5866220500508169,
+        0.6102045693647885,
+        0.6315196771144055,
+        0.5987643243809005,
+        0.6176088865357955
+      ],
+      "mean": 0.6089439014893414,
+      "std": 0.0154157434862607,
+      "seconds": 43.438257499998144,
+      "incumbent_mean_before": 0.5379772586292838,
+      "incumbent_std_before": 0.01563035063836193,
+      "kept_in_search": true
+    },
+    {
+      "id": "V3-3",
+      "stage": "family_screen",
+      "family": "linear_svc",
+      "params": {},
+      "fold_scores": [
+        0.5452623380552363,
+        0.5981078783003646,
+        0.5878061037916616,
+        0.5848343675113906,
+        0.6221129602153661
+      ],
+      "mean": 0.5876247295748038,
+      "std": 0.02490672877849458,
+      "seconds": 17.723251799998252,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-4",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 10000,
+        "tfidf__max_df": 0.9,
+        "classifier__min_samples_leaf": 1,
+        "classifier__max_depth": 30
+      },
+      "fold_scores": [
+        0.563376463613028,
+        0.5935992061372867,
+        0.6327726040818192,
+        0.5942767690021712,
+        0.6031677094915181
+      ],
+      "mean": 0.5974385504651646,
+      "std": 0.022209375478586108,
+      "seconds": 27.77335023880005,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-5",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 20000,
+        "tfidf__max_df": 0.9,
+        "classifier__min_samples_leaf": 2,
+        "classifier__max_depth": 30
+      },
+      "fold_scores": [
+        0.559941223312291,
+        0.6215800975101602,
+        0.6028024561896653,
+        0.5942793304919601,
+        0.6167942788976483
+      ],
+      "mean": 0.5990794772803449,
+      "std": 0.021857708076941453,
+      "seconds": 25.585954427719116,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-6",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 10000,
+        "tfidf__max_df": 0.9,
+        "classifier__min_samples_leaf": 1,
+        "classifier__max_depth": 30
+      },
+      "fold_scores": [
+        0.5832117452765399,
+        0.6100842518998308,
+        0.652716872163076,
+        0.5862003610779577,
+        0.6433162739491518
+      ],
+      "mean": 0.6151059008733112,
+      "std": 0.02859508580488019,
+      "seconds": 28.187321424484253,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-7",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.95,
+        "classifier__min_samples_leaf": 2,
+        "classifier__max_depth": 30
+      },
+      "fold_scores": [
+        0.5863877114086966,
+        0.6150467258999948,
+        0.6401949739298424,
+        0.5955829552194972,
+        0.6249275418198071
+      ],
+      "mean": 0.6124279816555676,
+      "std": 0.019472818367348797,
+      "seconds": 27.1693332195282,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-8",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.9,
+        "classifier__min_samples_leaf": 1,
+        "classifier__max_depth": 30
+      },
+      "fold_scores": [
+        0.5639422806886838,
+        0.5908264205598974,
+        0.6398704837007398,
+        0.5723503500844002,
+        0.6175775344316996
+      ],
+      "mean": 0.5969134138930842,
+      "std": 0.02828358867040845,
+      "seconds": 28.61559724807739,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-9",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.9,
+        "classifier__min_samples_leaf": 2,
+        "classifier__max_depth": 30
+      },
+      "fold_scores": [
+        0.5863877114086966,
+        0.6001035982180869,
+        0.6281260012797171,
+        0.5955829552194972,
+        0.6249275418198071
+      ],
+      "mean": 0.607025561589161,
+      "std": 0.016555827546976293,
+      "seconds": 27.039369583129883,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-10",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.9,
+        "classifier__min_samples_leaf": 2,
+        "classifier__max_depth": null
+      },
+      "fold_scores": [
+        0.5806983450835826,
+        0.6142148203739834,
+        0.6368870808614813,
+        0.5890021139980615,
+        0.6174027544705153
+      ],
+      "mean": 0.6076410229575248,
+      "std": 0.020333002413534994,
+      "seconds": 29.25036478042603,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-11",
+      "stage": "randomized_search",
+      "family": "random_forest",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.95,
+        "classifier__min_samples_leaf": 2,
+        "classifier__max_depth": null
+      },
+      "fold_scores": [
+        0.5713735381299857,
+        0.6076027385600378,
+        0.6237541675502346,
+        0.5921826328228424,
+        0.6248945027060085
+      ],
+      "mean": 0.6039615159538217,
+      "std": 0.020218387077669323,
+      "seconds": 29.082767963409424,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-12",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 20000,
+        "tfidf__max_df": 0.95,
+        "classifier__C": 3.0
+      },
+      "fold_scores": [
+        0.5546669635311415,
+        0.6169962706339683,
+        0.5733486805779925,
+        0.5702796101375666,
+        0.6021727502680388
+      ],
+      "mean": 0.5834928550297416,
+      "std": 0.02271494433116875,
+      "seconds": 20.165660619735718,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-13",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.9,
+        "classifier__C": 1.0
+      },
+      "fold_scores": [
+        0.5397027573496203,
+        0.5925623710685354,
+        0.5879576432322278,
+        0.5835363227718037,
+        0.6257500264117034
+      ],
+      "mean": 0.585901824166778,
+      "std": 0.02748242300394449,
+      "seconds": 17.982656717300415,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-14",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 10000,
+        "tfidf__max_df": 0.9,
+        "classifier__C": 3.0
+      },
+      "fold_scores": [
+        0.550666067190866,
+        0.6126669224236058,
+        0.5974273885367261,
+        0.5741259415025791,
+        0.610380414297892
+      ],
+      "mean": 0.5890533467903338,
+      "std": 0.023575326091077202,
+      "seconds": 18.83207869529724,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-15",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.95,
+        "classifier__C": 3.0
+      },
+      "fold_scores": [
+        0.5541104346720114,
+        0.6133916134755839,
+        0.5739696833055764,
+        0.5828515586584792,
+        0.6164465725025584
+      ],
+      "mean": 0.5881539725228419,
+      "std": 0.023772597069991012,
+      "seconds": 18.735390424728394,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-16",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 20000,
+        "tfidf__max_df": 0.9,
+        "classifier__C": 1.0
+      },
+      "fold_scores": [
+        0.5470512687106247,
+        0.608009919941687,
+        0.5930938349197334,
+        0.5633027675398503,
+        0.6014101814659587
+      ],
+      "mean": 0.5825735945155708,
+      "std": 0.02343373431702715,
+      "seconds": 31.217563867568966,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-17",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.95,
+        "classifier__C": 3.0
+      },
+      "fold_scores": [
+        0.5475985823095074,
+        0.6122838975952943,
+        0.5784600986164294,
+        0.5816375601713911,
+        0.6140602684715176
+      ],
+      "mean": 0.586808081432828,
+      "std": 0.0245988082485922,
+      "seconds": 31.578964948654175,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-18",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 3,
+        "tfidf__max_features": 10000,
+        "tfidf__max_df": 0.95,
+        "classifier__C": 1.0
+      },
+      "fold_scores": [
+        0.5513702414503694,
+        0.6078395914809521,
+        0.6014985406583342,
+        0.5685494890125358,
+        0.6046944179201079
+      ],
+      "mean": 0.5867904561044599,
+      "std": 0.022659524207840294,
+      "seconds": 31.168718099594113,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    },
+    {
+      "id": "V3-19",
+      "stage": "randomized_search",
+      "family": "linear_svc",
+      "params": {
+        "tfidf__min_df": 2,
+        "tfidf__max_features": 5000,
+        "tfidf__max_df": 0.9,
+        "classifier__C": 1.0
+      },
+      "fold_scores": [
+        0.5452623380552363,
+        0.5923704424452342,
+        0.5903839857840292,
+        0.5848343675113906,
+        0.6221129602153661
+      ],
+      "mean": 0.5869928188022513,
+      "std": 0.02457614745143372,
+      "seconds": 29.5216121673584,
+      "incumbent_mean_before": 0.6089439014893414,
+      "incumbent_std_before": 0.0154157434862607,
+      "kept_in_search": false
+    }
+  ],
+  "shortlisted_families": [
+    "random_forest",
+    "linear_svc"
+  ],
+  "chosen": {
+    "id": "V3-2",
+    "stage": "family_screen",
+    "family": "random_forest",
+    "params": {},
+    "fold_scores": [
+      0.5866220500508169,
+      0.6102045693647885,
+      0.6315196771144055,
+      0.5987643243809005,
+      0.6176088865357955
+    ],
+    "mean": 0.6089439014893414,
+    "std": 0.0154157434862607,
+    "seconds": 43.438257499998144,
+    "incumbent_mean_before": 0.5379772586292838,
+    "incumbent_std_before": 0.01563035063836193,
+    "kept_in_search": true
+  },
+  "cv_gate_passed": true
+}
