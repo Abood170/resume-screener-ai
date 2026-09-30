@@ -1,0 +1,26 @@
+category,count,technical_developer_scope,unique_normalized,redundant_normalized,literal_count,literal_share,variant_count,variant_share
+Advocate,20,False,10,10,20,1.0,20,1.0
+Arts,36,False,6,30,36,1.0,36,1.0
+Automation Testing,26,True,7,19,22,0.8461538461538461,22,0.8461538461538461
+Blockchain,40,True,5,35,40,1.0,40,1.0
+Business Analyst,28,False,6,22,28,1.0,28,1.0
+Civil Engineer,24,False,6,18,24,1.0,24,1.0
+Data Science,40,True,10,30,36,0.9,40,1.0
+Database,33,True,11,22,33,1.0,33,1.0
+DevOps Engineer,55,True,7,48,51,0.9272727272727272,51,0.9272727272727272
+DotNet Developer,28,True,7,21,0,0.0,24,0.8571428571428571
+ETL Developer,40,True,5,35,40,1.0,40,1.0
+Electrical Engineering,30,False,5,25,18,0.6,30,1.0
+HR,44,False,10,34,44,1.0,44,1.0
+Hadoop,42,True,7,35,42,1.0,42,1.0
+Health and fitness,30,False,6,24,10,0.3333333333333333,15,0.5
+Java Developer,84,True,13,71,78,0.9285714285714286,78,0.9285714285714286
+Mechanical Engineer,40,False,5,35,40,1.0,0,0.0
+Network Security Engineer,25,True,5,20,10,0.4,10,0.4
+Operations Manager,40,False,4,36,40,1.0,40,1.0
+PMO,30,False,3,27,30,1.0,30,1.0
+Python Developer,48,True,6,42,48,1.0,48,1.0
+SAP Developer,24,True,6,18,0,0.0,0,0.0
+Sales,40,False,5,35,40,1.0,40,1.0
+Testing,70,True,7,63,60,0.8571428571428571,60,0.8571428571428571
+Web Designing,45,True,4,41,18,0.4,45,1.0

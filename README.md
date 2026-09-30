@@ -10,171 +10,151 @@ pinned: false
 
 # Resume Screener AI
 
-## Live Demo
-
-Hugging Face Spaces deployment is pending. See [DEPLOY_HF.md](DEPLOY_HF.md); `/health` checks readiness and `/docs` provides the API schema.
-
 A locally trained job-category classifier using scikit-learn, FastAPI and React. It demonstrates reproducible training, calibration and uncertainty handling. **This is not a hiring decision tool, a candidate ranking system or a measure of applicant quality.**
+
+**Official model: production_v2.** Experimental candidates are archived and not served.
+
+## Live demo
+
+Public deployment is pending; no live URL is claimed. See [deployment instructions](DEPLOY_HF.md). The API exposes `/health` and interactive documentation at `/docs`.
 
 ## Dataset and disclosure
 
-The real public [Kaggle Resume Dataset](https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset) contains 2484 rows and 24 categories; no synthetic training data was used. Source-provided labels and website-derived examples were not independently verified. The retained dataset has 2481 rows. Source and dataset hash are recorded in [data/provenance.json](data/provenance.json); current CSV SHA-256: `76275a0d8e029e4fb46250296c0a25661bd44534ccdec034f4a19f42bbc753a0`.
+Training uses the public [Sneha Anbhawal Kaggle Resume Dataset](https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset): 2484 source rows and 24 broad categories, with 2481 retained rows after recorded cleaning. No synthetic training data was used. Labels and scraped source content were not independently validated. Public availability is not evidence of consent for every downstream use.
 
-Public availability does not establish consent for unrelated reuse. Do not log private resumes. No independent licensing or anonymization guarantee is made for source data.
+The seed-42 stratified split remains 1984 training and 497 held-out rows in [reports/split.json](reports/split.json). [Provenance](data/provenance.json) records sources and hashes. `data/resumes.csv` is the training source. **`data/resumes_tech.csv` is rejected audit material, NOT training data**; it remains in the repository for reproducibility. Its publisher states CC0. Do not upload or commit private resumes.
 
-## Methodology
+## Methodology and honesty findings
 
-- Preserve the original stratified seed-42 split: 1984 training and 497 held-out rows in `reports/split.json`. No rows were resplit after masking.
-- Apply a **fixed universal dictionary** containing every category name and the earlier audit's variants to every text, without using its label. Lowercase, remove URLs/nonletters, remove NLTK stopwords, noun-lemmatize, and remove canonical lemma forms of the same dictionary. This removes useful domain vocabulary too.
-- The saved v2 vectorizer calls `clean_text_universal` during both fitting and API inference. `clean_text_legacy` preserves old behavior; the `clean_text` compatibility entry point keeps frozen baseline/L1 pickles reproducible. Do not substitute the legacy function in new production fits.
-- Keep baseline TF-IDF parameters (`max_features=5000`, `ngram_range=(1, 2)`) and all Random Forest hyperparameters unchanged. Fit vocabulary/IDF inside each training fold. See [protocol.json](experiments/production_v2/protocol.json).
-- Fixed sigmoid calibration is refitted from scratch. Outer and inner stratified CV each use 5 folds; calibrators see out-of-fold base-model probabilities. Final calibration uses training OOF predictions; the final forest fits only the full training partition. No method search was repeated.
-- Select abstention thresholds using only training OOF predictions and the original grid/utility rule. Freeze choices before the one final held-out experiment evaluation. Later metric audits use saved predictions; the regression suite also verifies saved-artifact reproducibility, without tuning settings.
+The initial benchmark contained a label-name shortcut: the earlier error analysis found own-label variants in 2199/2484 resumes (share 0.8852657004830918). Baseline v1's recorded test macro F1 was 0.7783811932565733. That internal score allowed job-title lookup and was not convincing evidence of generalization. Label presence alone does not measure how much of a prediction is caused by the shortcut.
 
-## Actual results
+The L1 diagnostic removed each resume's own category variants during fitting and evaluation, recording test macro F1 0.5580907457690872. It measured sensitivity to label wording, but required the true category and therefore could not serve as an inference pipeline. It also removed genuine domain evidence; the difference is not a causal decomposition of performance.
 
-Generated from [experiments/production_v2/results.json](experiments/production_v2/results.json). CV standard deviation describes fold variation, not a confidence interval. Every row below uses calibrated predictions before abstention.
+Production_v2 applies the entire fixed category-variant dictionary, including canonical lemma forms, to every input without knowing its label. The same transformation runs during training and inference. TF-IDF plus Random Forest, sigmoid calibration and a training-selected abstention policy remain the official model. Its recorded test macro F1 is 0.520205602976937. Promotion addressed the known shortcut; it did not improve the old headline score or prove that every remaining shortcut was eliminated.
 
-| System | CV macro F1 (mean ± std) | Test macro F1 | Test accuracy |
-|---|---|---|---|
-| baseline_v1 | 0.710961947058129 ± 0.014977244812944244 | 0.7783811932565733 | 0.8048289738430584 |
-| L1 | 0.5317317225299487 ± 0.009913121069946657 | 0.5580907457690872 | 0.5955734406438632 |
-| production_v2 | 0.4861169105304429 ± 0.014420560374723257 | 0.520205602976937 | 0.5633802816901409 |
+The later classical-ML exploration evaluated seven configurations, including a freshly measured control, technical-token preservation, balanced weights, Logistic Regression, word/character SVMs and combined features. Word SVC ranked first on raw training CV at 0.5187029137588132 ± 0.02127154152059278; its calibrated test macro F1 was 0.5178233530804878. The combined word/character candidate recorded 0.5191586134385697. Only the frozen finalists received final test evaluation. These results did not demonstrate a meaningful held-out improvement over production_v2. Training CV did improve over the freshly measured raw RF control, so it would be inaccurate to say all CV differences were noise. Raw ranking CV and calibrated production CV are different measurements; fold standard deviation is not a significance test. No exploration candidate was adopted. See the [complete ranked exploration](experiments/exploration/SUMMARY.md).
 
-The earlier audit found own-label variants in 2199/2484 raw resumes (share 0.8852657004830918). Baseline v1 therefore included a known shortcut. L1 removed only each resume's own true category variants, an informative diagnostic that cannot be used on unlabeled inputs. Production v2 removes all variants regardless of category.
+Jillani's technical-role dataset was then audited and rejected for training as-is: 962 rows contained only 166 unique texts, with 796 redundant exact duplicates (fraction 0.8274428274428275). Python Developer has 6 unique texts, DevOps Engineer 7 and Java Developer 13, as recorded in the audit category table. Own-label variants occur in 880/962 rows; 734 rows carry heuristic encoding-corruption markers. After exact deduplication, no unique text had a same-category cosine neighbor above 0.9 under the declared audit representation: repeated copies, rather than additional detected near-duplicates, dominate this problem. The CSV is retained solely to reproduce the [audit](reports/tech_dataset_audit/SUMMARY.md), not used in training.
 
-Production v2 minus L1: test macro F1 -0.03788514279215027; training CV macro F1 -0.04561481199950579. The drop is present in training CV too; it is not solely a held-out anomaly.
+All selection used the saved training partition. Held-out results are reporting evidence, not a basis for further tuning. The existing split has nevertheless been inspected across historical experiments and is not an untouched external benchmark.
 
-Universal masking removes an average of 15.551307847082494 whitespace-delimited words per test resume, versus 7.334004024144869 for L1. Including canonical lemma masking, it removes 19.80482897384306 cleaned tokens on average, versus 8.50503018108652 for L1. On training resumes the corresponding raw-word averages are 15.145665322580646 versus 7.120463709677419. Raw-word counts and cleaned-token counts use different tokenization and should not be subtracted from one another.
+## Final pipeline and results
 
-This broader removal includes useful domain evidence as well as titles. L1 conditions its removal on the true category; v2 does not. The additional canonical lemma pass also removes singular forms such as sale. These differences are consistent with a lower score, but do not establish a causal decomposition. Neither a runtime masking bug nor altered CV folds is indicated by the integrity audit. There are 0 empty test texts after masking, 0 exact masked cross-split overlaps, and 0 forbidden vocabulary features.
+Lowercase text, remove URLs/nonletters, remove NLTK stopwords, noun-lemmatize, and universally mask label variants and their lemma forms. Fit TF-IDF (`max_features=5000`, `ngram_range=(1, 2)`) within each training fold. The saved vectorizer calls `clean_text_universal`; the historical legacy cleaner is retained only for archived artifact compatibility.
 
-The hypothesis that v2 might fall between baseline and L1 was not a guaranteed bound and was not borne out. No preprocessing, model parameter, calibration method or threshold was selected using this held-out result. Promotion implements the requested label-independent methodology, not a claim of predictive improvement. This is materially lower than the old internal benchmark, but more defensible against the known label-word shortcut. It is not proof that all remaining predictions are genuine content understanding or that the model is ready for hiring decisions.
+Random Forest and sigmoid calibration are fixed from the recorded protocol. Nested training CV keeps calibration separate from fitting; vocabulary/IDF are fold-local. The final forest is fitted only on training rows. See [protocol](experiments/production_v2/protocol.json) and [results](experiments/production_v2/results.json). No metrics were recomputed for this wrap-up.
 
+| Metric | Recorded value |
+|---|---|
+| Calibrated CV macro F1 | 0.4861169105304429 ± 0.014420560374723257 |
+| Test macro F1 | 0.520205602976937 |
+| Test accuracy | 0.5633802816901409 |
+| Test abstention coverage | 0.6156941649899397 |
+| Test answered accuracy | 0.7189542483660131 |
 
-[Per-class F1 for all three systems](experiments/production_v2/comparison.md). Historical results and artifacts remain in `experiments/baseline_v1/` and `experiments/leakage_impact/`; current serving metrics and checksums are in root `results.json` and `models/manifest.json`.
+These test scores describe calibrated predictions on all held-out rows before abstention. CV spread is fold standard deviation, not a confidence interval. The per-class results show substantial variation:
 
-## Calibration and abstention
+<details><summary>Recorded per-class test F1</summary>
 
-| Metric | Raw v2 | Calibrated v2 |
+| Category | Test F1 |
+|---|---|
+| ACCOUNTANT | 0.631578947368421 |
+| ADVOCATE | 0.37735849056603776 |
+| AGRICULTURE | 0.43478260869565216 |
+| APPAREL | 0.3333333333333333 |
+| ARTS | 0.35294117647058826 |
+| AUTOMOBILE | 0.25 |
+| AVIATION | 0.7727272727272727 |
+| BANKING | 0.6341463414634146 |
+| BPO | 0.0 |
+| BUSINESS-DEVELOPMENT | 0.5517241379310345 |
+| CHEF | 0.7727272727272727 |
+| CONSTRUCTION | 0.6956521739130435 |
+| CONSULTANT | 0.05405405405405406 |
+| DESIGNER | 0.5789473684210527 |
+| DIGITAL-MEDIA | 0.6486486486486487 |
+| ENGINEERING | 0.6363636363636364 |
+| FINANCE | 0.5333333333333333 |
+| FITNESS | 0.6666666666666666 |
+| HEALTHCARE | 0.41509433962264153 |
+| HR | 0.8163265306122449 |
+| INFORMATION-TECHNOLOGY | 0.7142857142857143 |
+| PUBLIC-RELATIONS | 0.5833333333333334 |
+| SALES | 0.44 |
+| TEACHER | 0.5909090909090909 |
+
+</details>
+
+## Calibration and uncertainty
+
+| Test metric | Raw | Sigmoid calibrated |
 |---|---|---|
 | brier_score | 0.6901419517102615 | 0.6029392062638212 |
 | log_loss | 1.969160540109228 | 1.6418886069471392 |
 | ece_10_bins | 0.23144869215291752 | 0.09569966890724542 |
-| macro_f1 | 0.4599307596698923 | 0.520205602976937 |
-| accuracy | 0.5352112676056338 | 0.5633802816901409 |
 
-Brier is the mean sum across classes of squared probability error. Log loss uses natural logarithms. ECE uses top-label confidence and ten equal-width bins; it depends on binning and is not a correctness guarantee.
+Brier is the mean sum of squared class-probability errors; log loss uses natural logarithms. ECE uses top-label confidence with ten equal-width bins and depends on binning. Calibration is not a correctness guarantee.
 
-Current thresholds: **T1=0.4, T2=0.05** (previously 0.3 and 0.15). Select the maximum training OOF utility: correct answer +1, wrong answer -1, abstention 0; ties favor coverage, then lower thresholds. This is a declared demo cost assumption, not a validated operational cost. Inputs shorter than 50 whitespace words also trigger uncertainty. Reason priority is short input, low top probability, small top-two margin. Numerical comparisons are strict `<`.
+The policy flags uncertainty when calibrated top probability is below **0.4**, the top-two margin is below **0.05**, or input has fewer than **50** whitespace words. Threshold selection used training out-of-fold utility (correct +1, wrong -1, abstain 0), with coverage/lower-threshold tie-breaks. This is a demo cost assumption, not an operationally validated policy. On test, it answers 306/497 rows. Selective accuracy must not be confused with all-row accuracy.
 
-Held-out coverage: **0.6156941649899397**, answering **306/497** resumes. Accuracy on answered resumes: **0.7189542483660131**. This selective accuracy must not be confused with all-row accuracy. Training selection scores are optimistic after threshold tuning.
-
-![Training threshold tradeoff](experiments/production_v2/coverage_vs_accuracy.png)
-![Held-out reliability](experiments/production_v2/reliability_before_after.png)
+![Reliability](experiments/production_v2/reliability_before_after.png)
+![Coverage tradeoff](experiments/production_v2/coverage_vs_accuracy.png)
 
 ## Run locally
 
-Use Python 3.12.14 and the pinned `requirements.txt`. From the project root:
+Use the pinned Python dependencies; the recorded training environment used Python 3.12.14. From the project root:
 
-```bash
+```powershell
 python -m venv .venv
-# PowerShell: .venv\Scripts\Activate.ps1
-# macOS/Linux: source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m nltk.downloader stopwords wordnet omw-1.4
-python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m nltk.downloader stopwords wordnet omw-1.4
+.\.venv\Scripts\python.exe -m uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
 
-In another terminal: `cd frontend`, `npm install`, `npm run dev`. Open the displayed Vite URL. Included artifacts serve offline; NLTK downloads are explicit setup steps. The Dockerfile downloads corpora during build, serves on `PORT` (default 7860), and runs as a non-root user. An actual Docker build has not been verified locally.
+In another terminal:
 
-## API contract and real example
-
-`GET /health`, `POST /predict` with JSON `{"text": "..."}`, and `POST /predict/file` with multipart field `file` keep their existing schemas. Create `request.json` locally with your text; never commit personal CVs:
-
-```bash
-curl -X POST http://127.0.0.1:8000/predict -H "Content-Type: application/json" --data-binary @request.json
-curl -X POST http://127.0.0.1:8000/predict/file -F "file=@cv.pdf"
+```powershell
+cd frontend
+npm install
+npm run dev
 ```
 
-Use `curl.exe` in PowerShell if needed. This response was captured from the promoted artifacts through FastAPI TestClient using an authored accounting demo, not a held-out record. Input content is not logged:
+Open http://127.0.0.1:5173. The frontend targets http://127.0.0.1:8000 by default; use `VITE_API_BASE_URL` to override it. See [frontend setup](frontend/README.md) for Node requirements. On Unix, use `.venv/bin/python` for the Python commands. Included model artifacts serve without model downloads; NLTK downloads are explicit setup steps. Git LFS is required to retrieve the stored model/data files when cloning (`git lfs pull`).
 
-```json
-{
-  "predicted_category": "ACCOUNTANT",
-  "confidence": 0.675,
-  "calibrated_predicted_category": "ACCOUNTANT",
-  "calibrated_confidence": 0.6463547658669152,
-  "calibrated_top_predictions": [
-    {
-      "category": "ACCOUNTANT",
-      "probability": 0.6463547658669152
-    },
-    {
-      "category": "FINANCE",
-      "probability": 0.22120984156348816
-    },
-    {
-      "category": "CONSULTANT",
-      "probability": 0.010829865275572736
-    }
-  ],
-  "is_uncertain": false,
-  "uncertainty_reason": null,
-  "top_predictions": [
-    {
-      "category": "ACCOUNTANT",
-      "probability": 0.675
-    },
-    {
-      "category": "FINANCE",
-      "probability": 0.205
-    },
-    {
-      "category": "BANKING",
-      "probability": 0.03
-    }
-  ],
-  "top_terms": [
-    "statement",
-    "account",
-    "reconciliation",
-    "bank",
-    "ledger",
-    "general ledger",
-    "tax",
-    "report"
-  ],
-  "text_stats": {
-    "word_count": 76,
-    "short_input": false
-  },
-  "source": "text",
-  "text_preview": null
-}
+## API and privacy
+
+`GET /health` reports readiness. `POST /predict` accepts a JSON object with a string `text` field. `POST /predict/file` accepts multipart field `file` for PDF, DOCX or TXT. Create `request.json` locally, then:
+
+```powershell
+curl.exe -X POST http://127.0.0.1:8000/predict -H "Content-Type: application/json" --data-binary @request.json
+curl.exe -X POST http://127.0.0.1:8000/predict/file -F "file=@cv.pdf"
 ```
 
-Legacy `predicted_category`, `confidence` and `top_predictions` still describe raw RF probabilities. The calibrated category/confidence/top-three fields form a separate coherent view. Predictions may change with the new model; field names, types, validation and raw-versus-calibrated semantics are unchanged. `is_uncertain` and `uncertainty_reason` remain explicit. The frontend shows possible categories when uncertain and preserves the ethical footer.
+An existing response captured from production_v2 using an authored demo (not a held-out resume) is preserved in [api_examples.json](experiments/production_v2/api_examples.json). No new prediction was run for this document.
 
-`top_terms` uses present TF-IDF features multiplied by global RF impurity importance. These are influential terms, not class-specific or causal explanations. The full vocabulary and a real API example were checked for forbidden label phrases and lemma forms. File responses return a preview of original extracted text to the requesting browser; the model uses the universally masked representation.
+Legacy `predicted_category`, `confidence`, and `top_predictions` describe raw forest probabilities. `calibrated_predicted_category`, `calibrated_confidence`, and `calibrated_top_predictions` provide the calibrated view. `is_uncertain` and `uncertainty_reason` make uncertainty explicit; the UI shows possible categories when uncertain. No field scores candidate quality.
 
-Uploads accept PDF, DOCX and TXT, validate signatures and enforce bounded in-memory processing. No uploaded file is permanently stored. Scanned/image-only and encrypted PDFs are unsupported; no OCR is performed. Detailed existing upload bounds and errors are enforced in `src/extract.py` and `api/uploads.py`. Missing artifacts fail readiness; validation errors and unexpected failures return friendly responses without resume content or stack traces.
+`top_terms` multiplies present TF-IDF features by global forest feature importance. These are influential terms, not causal or class-specific explanations. Uploads use bounded in-memory processing, signature validation and friendly errors. Files are not permanently stored and resume contents are not logged. File responses include an extracted-text preview for the requesting browser. Scanned/image-only and encrypted PDFs are unsupported; no OCR is performed.
 
-## Verification and reproduction
+## Verification and evidence
 
-Backend: **104 passed, 0 failed, 0 errors, 0 skipped**. Frontend: **46 passed, 0 failed, 0 errors, 0 skipped**. Raw test evidence and schema comparison are in `experiments/production_v2/`. Run `python -m pytest -v` and, from `frontend`, `npm test`.
+Run `.\.venv\Scripts\python.exe -m pytest -v` and `npm test` inside `frontend`. Final wrap-up reports are in [reports/production_v2_final](reports/production_v2_final). Artifact checksum verification matches [models/manifest.json](models/manifest.json) against the archived production_v2 artifacts.
 
-`python -m src.production_v2 --run-dir experiments/<new-run>` reproduces the fixed training protocol with the included dataset and baseline snapshot. It refuses existing experiment evidence and does not promote automatically. Do not rerun to optimize against the holdout. Root `src/train.py` is the historical unmasked workflow and must not be used to regenerate current production artifacts. `python -m src.production_v2_report --final` regenerates this README from saved evidence, archiving previous documentation. Root results are synchronized from the production experiment; older results are archived before replacement.
+The evidence trail retains [baseline_v1](experiments/baseline_v1), [L1](experiments/leakage_impact), [production_v2](experiments/production_v2), [exploration](experiments/exploration), and the [technical dataset audit](reports/tech_dataset_audit). The [experiment log](experiments/experiment_log.md) records the closing decision. `src/finalize_documentation.py` generated this final document from saved results; its one-time guard prevents accidental overwrite. Earlier report generators produce historical documents and should not overwrite this final README.
+
+## Deployment
+
+The Docker SDK setup uses `PORT` with a default of 7860 and binds to `0.0.0.0`, running as a non-root user. NLTK resources are installed during the image build and model artifacts are included. See [DEPLOY_HF.md](DEPLOY_HF.md) and [README_HF.md](README_HF.md). An actual Docker build/public deployment has not been verified locally. Restrict the currently permissive CORS configuration to the real frontend origin before production deployment.
 
 ## Limitations
 
-- Universal masking addresses a specific known lexical shortcut; near-duplicate templates, related occupation words, website bias and source-label errors remain. It is a more defensible measurement of this masking policy, not proof of an unbiased or leakage-free model.
-- The lower number is visible rather than hidden: identifying and addressing an inflated internal benchmark is a positive methodological finding, not evidence of improved accuracy. The test split has been inspected across earlier experiments and is not a pristine external benchmark.
-- Small, imbalanced, single-source English data limits calibration and minority-class estimates. Non-English CVs, short inputs and out-of-domain texts are unreliable. Thresholds are dataset-specific; confidence does not measure candidate quality.
-- Broad variants remove genuine occupational content; alphabetic cleaning loses numeric experience and distinctions such as C++ versus C#. Scanned PDFs are unsupported and extraction can misorder columns.
-- There is no production monitoring, fairness/hiring-outcome validation, rate limiting, authentication, load testing or public-deployment validation. CORS currently allows all origins; restrict it before public deployment.
-- Joblib loads trusted artifacts only. Checksums detect mismatches, not malicious replacement of artifacts and their manifest. Restart the API after artifact changes; already running processes retain their loaded model until restarted.
+- The observed classical TF-IDF experiments remain around the production test macro F1 of 0.520205602976937; this is an empirical plateau in the investigated settings, not a proven upper bound. Broad occupational categories cannot finely resolve Java, Python or DevOps roles.
+- Universal masking removes useful occupational vocabulary too. Related skill words, templates and source bias may remain. Alphabetic cleaning loses distinctions such as C++ and C#.
+- The rejected technical dataset has extensive exact duplication, minimal independent support per role, frequent label mentions and encoding-warning markers. Retaining it for an audit does not make it suitable training data.
+- Small, imbalanced, single-source English data limits per-class reliability and calibration. Non-English, short and out-of-domain CVs are unreliable; thresholds are dataset-specific. The repeatedly inspected historical holdout is not an independent external validation set.
+- There is no production monitoring, fairness or hiring-outcome validation, authentication, rate limiting or deployment load test. This remains a classification demonstration, not a hiring tool.
+- Load only trusted joblib artifacts. Checksums detect mismatches, not malicious replacement of both model and manifest. Restart the API after intentional artifact updates.
 
 ## What I'd improve with more time
 
-Obtain consented, independently labeled external data; validate source/template-separated generalization; inspect minority-class errors and domain shift. Compare alternative models using training-only validation, and validate calibration and abstention on independent data. Add privacy-aware monitoring and deployment load tests. No candidate-quality scoring is proposed.
+Obtain a properly sourced, consented and independently labeled technical-role dataset; audit duplication, taxonomy and source separation before defining a new split. Compare pretrained embeddings under training-only selection with explicit download approval, measured resource costs and honest explanation limits; embeddings have not yet been evaluated. Investigate per-class uncertainty thresholds using training-only validation and enough independent examples, followed by external calibration validation. Add privacy-aware monitoring and deployment load tests.

@@ -1,0 +1,98 @@
+{
+  "Advocate": [
+    "advocate",
+    "advocates",
+    "advocacy"
+  ],
+  "Arts": [
+    "arts",
+    "artist",
+    "artists",
+    "art"
+  ],
+  "Automation Testing": [
+    "automation testing"
+  ],
+  "Blockchain": [
+    "blockchain"
+  ],
+  "Business Analyst": [
+    "business analyst"
+  ],
+  "Civil Engineer": [
+    "civil engineer",
+    "civil engineers",
+    "civil engineering"
+  ],
+  "Data Science": [
+    "data science",
+    "data scientist",
+    "data scientists"
+  ],
+  "Database": [
+    "database"
+  ],
+  "DevOps Engineer": [
+    "devops engineer",
+    "devops engineering"
+  ],
+  "DotNet Developer": [
+    "dotnet developer",
+    "dot net developer",
+    "net developer"
+  ],
+  "ETL Developer": [
+    "etl developer"
+  ],
+  "Electrical Engineering": [
+    "electrical engineering",
+    "electrical engineer"
+  ],
+  "HR": [
+    "hr",
+    "human resources",
+    "human resource"
+  ],
+  "Hadoop": [
+    "hadoop"
+  ],
+  "Health and fitness": [
+    "health and fitness",
+    "health fitness"
+  ],
+  "Java Developer": [
+    "java developer"
+  ],
+  "Mechanical Engineer": [
+    "mechanical engineer",
+    "mechanical engineers",
+    "mechanical engineering"
+  ],
+  "Network Security Engineer": [
+    "network security engineer"
+  ],
+  "Operations Manager": [
+    "operations manager"
+  ],
+  "PMO": [
+    "pmo"
+  ],
+  "Python Developer": [
+    "python developer"
+  ],
+  "SAP Developer": [
+    "sap developer"
+  ],
+  "Sales": [
+    "sales",
+    "salesperson"
+  ],
+  "Testing": [
+    "testing"
+  ],
+  "Web Designing": [
+    "web designing",
+    "web design",
+    "web designer"
+  ]
+}

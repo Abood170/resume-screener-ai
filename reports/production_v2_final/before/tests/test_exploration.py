@@ -62,10 +62,4 @@ def test_nested_calibration_has_disjoint_rows():
 
 def test_all_protected_files_unchanged():
     checks=json.loads((ROOT/'experiments/exploration/protected.json').read_text())
-    # Final documentation was explicitly authorized after exploration. Its
-    # original bytes must still exist; all other protected files stay in place.
-    for name,value in checks.items():
-        path = ROOT / name
-        if name == 'README.md':
-            path = ROOT / 'reports/production_v2_final/before/README.md'
-        assert sha256(path) == value, name
+    assert all(sha256(ROOT/name)==value for name,value in checks.items())

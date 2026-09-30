@@ -20,11 +20,7 @@
       "local_path": "data/resumes_tech.csv",
       "raw_rows": 962,
       "raw_categories": 25,
-      "transformation": "None; original CSV bytes preserved",
-      "used_in_training": false,
-      "status": "rejected_after_audit",
-      "audit_report": "reports/tech_dataset_audit/SUMMARY.md",
-      "retention_reason": "Provenance and reproducibility only; no merging or classifier training"
+      "transformation": "None; original CSV bytes preserved"
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "calibrator.joblib": {
+    "production_sha256": "41141c8098c85f77a101b05152b740edebc73d7b10838c712f474021bb46a1bc",
+    "archived_sha256": "41141c8098c85f77a101b05152b740edebc73d7b10838c712f474021bb46a1bc",
+    "manifest_sha256": "41141c8098c85f77a101b05152b740edebc73d7b10838c712f474021bb46a1bc",
+    "match": true
+  },
+  "model.joblib": {
+    "production_sha256": "a18875e2450ba34af414bd438696e5a0a8d6339bf2bf14fa0a4b44e574c8ae35",
+    "archived_sha256": "a18875e2450ba34af414bd438696e5a0a8d6339bf2bf14fa0a4b44e574c8ae35",
+    "manifest_sha256": "a18875e2450ba34af414bd438696e5a0a8d6339bf2bf14fa0a4b44e574c8ae35",
+    "match": true
+  },
+  "vectorizer.joblib": {
+    "production_sha256": "dbf3e52155cfc10aecc03f6cb9d3c20579c7cab3e5bcb8c01ad0e02de9ebd048",
+    "archived_sha256": "dbf3e52155cfc10aecc03f6cb9d3c20579c7cab3e5bcb8c01ad0e02de9ebd048",
+    "manifest_sha256": "dbf3e52155cfc10aecc03f6cb9d3c20579c7cab3e5bcb8c01ad0e02de9ebd048",
+    "match": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "backend": {
+    "tests": 126,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 126
+  },
+  "frontend": {
+    "numTotalTests": 46,
+    "numPassedTests": 46,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numRuntimeErrorTestSuites": 0
+  },
+  "protected_files_unchanged": true
+}
